@@ -1,0 +1,58 @@
+# Tạm thời bỏ qua các thư mục và tập tin do Unity và IDE tạo ra.
+# Thường các thư mục này chứa dữ liệu tạm thời, dữ liệu build, hoặc dữ liệu cục bộ.
+
+## Thư mục Tự động sinh ra và Tạm thời
+# Bỏ qua thư mục thư viện (rất lớn và tự sinh ra)
+/Library/
+
+# Bỏ qua thư mục đối tượng tạm thời/build
+/Obj/
+
+# Bỏ qua thư mục tự động sinh ra trong quá trình build
+/Build/
+/Temp/
+
+# Bỏ qua thư mục lưu trữ cache của các Asset Server cũ (nếu có)
+/Assets/AssetStoreTools/
+/Assets/AssetStoreTools/Editor/AssetStoreTools.dll
+/Assets/AssetStoreTools/Editor/AssetStoreTools.pdb
+/Assets/AssetStoreTools/Editor/AssetStoreTools.XML
+
+## Thư mục Build và Executable
+# Bỏ qua các file cài đặt và build
+/*.csproj
+/*.unityproj
+/*.sln
+/*.suo
+/*.user
+/*.userprefs
+/*.pidb
+/*.booproj
+/*.svd
+/*.pdb
+/*.meta
+/ExportedObj/
+/bin/
+/obj/
+/debug/
+/Release/
+/x86/
+/x64/
+
+# Bỏ qua các file project của Visual Studio và JetBrains (IDE)
+.vs/
+.idea/
+*.lnk
+
+## Thư mục cài đặt cục bộ và Cache
+# Bỏ qua các file cài đặt cục bộ của Rider (JetBrains)
+.idea/
+# Bỏ qua các file cài đặt cục bộ của Visual Studio Code
+.vscode/
+
+## Các file tạm thời của hệ điều hành
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
