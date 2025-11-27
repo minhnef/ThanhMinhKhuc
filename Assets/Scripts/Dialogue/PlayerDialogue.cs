@@ -4,20 +4,21 @@ public class PlayerDialogue : MonoBehaviour
 {
     [SerializeField]
     private DialogueUI dialogueUI;
-    private DialogueTrigger npcDialogue;
+    private DialogueTrigger currentNPC;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.E)&&npcDialogue!=null)
+        if (Input.GetKey(KeyCode.E)&&currentNPC!=null)
         {
             if (dialogueUI.isOpen)
             {
-                dialogueUI.NextLine();
+                
+                 dialogueUI.NextLine();
             }
             else
             {
-                dialogueUI.ShowDialogue(npcDialogue.dialogues);
+                dialogueUI.StartDialogue(currentNPC);
             }
         }
     }
@@ -26,7 +27,9 @@ public class PlayerDialogue : MonoBehaviour
     {
         if (collision.CompareTag("NPC"))
         {
-            npcDialogue = collision.GetComponent<DialogueTrigger>();
+            currentNPC = collision.GetComponent<DialogueTrigger>();
+            // dialogueUI.npcImage.sprite = currentNPC.avatar;
+            // dialogueUI.npcNameText
         }
     }
 
@@ -34,7 +37,7 @@ public class PlayerDialogue : MonoBehaviour
     {
         if (collision.CompareTag("NPC"))
         {
-            npcDialogue=null;
+            currentNPC=null;
         }
     }
 
