@@ -9,12 +9,12 @@ public class PlayerDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.E)&&currentNPC!=null)
+        if (Input.GetKeyDown(KeyCode.E) && currentNPC != null)
         {
             if (dialogueUI.isOpen)
             {
-                
-                 dialogueUI.NextLine();
+
+                dialogueUI.NextLine();
             }
             else
             {
@@ -37,7 +37,7 @@ public class PlayerDialogue : MonoBehaviour
     {
         if (collision.CompareTag("NPC"))
         {
-            currentNPC=null;
+            currentNPC = null;
         }
     }
 

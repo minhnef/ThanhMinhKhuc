@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -14,7 +13,7 @@ public class DialogueUI : MonoBehaviour
     public TextMeshProUGUI dialogueText;
 
     [Header("Typing setting")]
-    public float typingSpeed = 0.03f;
+    public float typingSpeed = 0.3f;
 
     [SerializeField]
     private string[] lines;
@@ -30,9 +29,9 @@ public class DialogueUI : MonoBehaviour
     }
 
     public void StartDialogue(DialogueTrigger npcDialogue)
-    {   
+    {
         npcImage.sprite = npcDialogue.avatar;
-        npcNameText.text = npcDialogue.name;
+        npcNameText.text = npcDialogue.npcName;
         lines = npcDialogue.dialogues;
         index = 0;
         dialoguePanel.SetActive(true);
@@ -41,20 +40,20 @@ public class DialogueUI : MonoBehaviour
 
     private void StartTyping(string line)
     {
+        Debug.Log(line);
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
-
-            typingCoroutine = StartCoroutine(TypeLine(line));
         }
+        typingCoroutine = StartCoroutine(TypeLine(line));
     }
 
     private IEnumerator TypeLine(string line)
     {
-       isTyping = true;
-       dialogueText.text = "";
+        isTyping = true;
+        dialogueText.text = "";
 
-       foreach(char c in line)
+        foreach (char c in line)
         {
             dialogueText.text += c;
             yield return new WaitForSeconds(typingSpeed);
@@ -67,6 +66,7 @@ public class DialogueUI : MonoBehaviour
         if (isTyping)
         {
             StopCoroutine(typingCoroutine);
+
             dialogueText.text = lines[index];
             isTyping = false;
             return;
