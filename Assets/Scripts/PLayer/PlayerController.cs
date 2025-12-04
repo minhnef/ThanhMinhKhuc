@@ -23,11 +23,11 @@ public class PlayerController : MonoBehaviour
     [Header("Jump Buffering")]
     [SerializeField] private float jumpBufferTime = 0.15f;
     private float jumpBufferCounter;
-
-
+    private int maxHealth;
 
     void Start()
     {
+        maxHealth = 3;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -116,6 +116,17 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    public bool takeDamage(int damage)
+    {
+        if (maxHealth == 0) { return true; }
+        else
+        {
+            maxHealth -= damage;
+            return false;
+        }
+
+
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
