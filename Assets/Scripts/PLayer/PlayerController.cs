@@ -23,11 +23,15 @@ public class PlayerController : MonoBehaviour
     [Header("Jump Buffering")]
     [SerializeField] private float jumpBufferTime = 0.15f;
     private float jumpBufferCounter;
+    [Header("Health & Fighting")]
     private int maxHealth;
+    private int currentHealth;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRange = 1f;
 
     void Start()
     {
-        maxHealth = 3;
+        maxHealth = currentHealth = 3;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -37,6 +41,7 @@ public class PlayerController : MonoBehaviour
         movement = Input.GetAxisRaw("Horizontal");
 
         HandleMovement();
+        HandleBasicAttack();
         HandleCoyoteTime();
         HandleJumpBuffer();
         HandleJump();
@@ -52,7 +57,33 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    private void HandleBasicAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            animator.SetTrigger("BasicAttack");
+            Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, LayerMask.GetMask("Enemy"));
+            foreach (Collider2D enemy in hitPlayers)
+            {
+                Enemy enemyScript = enemy.GetComponent<Enemy>();
+                if (enemyScript != null)
+                {
+                   enemyScript.TakeDamage(1);
+                }
+            }
+        }
+    }
+    private void OnDrawGizmosSelected()
+    {
+       
 
+        // Attack
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        }
+    }
     private void HandleMovement()
     {
         rb.linearVelocityX = movement * speed;
@@ -60,8 +91,6 @@ public class PlayerController : MonoBehaviour
         if (movement < 0 && isFacingRight) Flip();
         else if (movement > 0 && !isFacingRight) Flip();
     }
-
-
 
     private void HandleCoyoteTime()
     {
