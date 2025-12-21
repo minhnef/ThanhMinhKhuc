@@ -122,7 +122,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         animator.SetTrigger("Died");
-        Destroy(gameObject, 0.3f); // Chờ animation 1 chút
+        Destroy(gameObject, 0.6f); // Chờ animation 1 chút
     }
 
     //

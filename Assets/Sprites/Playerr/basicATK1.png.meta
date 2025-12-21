@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: f1c188fba5e49aa459e53c946735ce87
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2743670007332697835
+    second: basicATK1_0
+  - first:
+      213: -7610862612997508800
+    second: basicATK1_1
+  - first:
+      213: 5918415552666782131
+    second: basicATK1_2
+  - first:
+      213: -2265866548173240111
+    second: basicATK1_3
+  - first:
+      213: -4752500006446682834
+    second: basicATK1_4
+  - first:
+      213: -8538480008688261962
+    second: basicATK1_5
+  - first:
+      213: -663845304899174264
+    second: basicATK1_6
+  - first:
+      213: -3305352339970010362
+    second: basicATK1_7
+  - first:
+      213: -1436370838979285819
+    second: basicATK1_8
+  - first:
+      213: -2694895993045045410
+    second: basicATK1_9
+  - first:
+      213: 7152207205804283725
+    second: basicATK1_10
+  - first:
+      213: 8787307370486425748
+    second: basicATK1_11
+  - first:
+      213: -6163918388264630906
+    second: basicATK1_12
+  - first:
+      213: -6617619247013026032
+    second: basicATK1_13
+  - first:
+      213: 2424874426147285921
+    second: basicATK1_14
+  - first:
+      213: 4346382820667762873
+    second: basicATK1_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 12
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: basicATK1_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 155
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5198a083aa68ce9d0800000000000000
+      internalID: -2743670007332697835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 155
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0417bfd07c8c06690800000000000000
+      internalID: -7610862612997508800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_2
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 154
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b9c9d9869f622250800000000000000
+      internalID: 5918415552666782131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_3
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 152
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d881b721660e80e0800000000000000
+      internalID: -2265866548173240111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_4
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 152
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2d24b88c6abb0eb0800000000000000
+      internalID: -4752500006446682834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_5
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 151
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b4ac50cba9318980800000000000000
+      internalID: -8538480008688261962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_6
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 84
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8808caf563c89c6f0800000000000000
+      internalID: -663845304899174264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_7
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 85
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 603d49e2f870122d0800000000000000
+      internalID: -3305352339970010362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_8
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 86
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cce8e8055cf01ce0800000000000000
+      internalID: -1436370838979285819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_9
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 87
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f2deb5f5ec99ad0800000000000000
+      internalID: -2694895993045045410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_10
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 88
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4714f54f8eb14360800000000000000
+      internalID: 7152207205804283725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_11
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 88
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 498e30e0f79c2f970800000000000000
+      internalID: 8787307370486425748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_12
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 22
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6850dfa32ec557aa0800000000000000
+      internalID: -6163918388264630906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_13
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 22
+        width: 43
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01720034b5e7924a0800000000000000
+      internalID: -6617619247013026032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_14
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 22
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab207b6172e6a120800000000000000
+      internalID: 2424874426147285921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basicATK1_15
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 22
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b823c3b524715c30800000000000000
+      internalID: 4346382820667762873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      basicATK1_0: -2743670007332697835
+      basicATK1_1: -7610862612997508800
+      basicATK1_10: 7152207205804283725
+      basicATK1_11: 8787307370486425748
+      basicATK1_12: -6163918388264630906
+      basicATK1_13: -6617619247013026032
+      basicATK1_14: 2424874426147285921
+      basicATK1_15: 4346382820667762873
+      basicATK1_2: 5918415552666782131
+      basicATK1_3: -2265866548173240111
+      basicATK1_4: -4752500006446682834
+      basicATK1_5: -8538480008688261962
+      basicATK1_6: -663845304899174264
+      basicATK1_7: -3305352339970010362
+      basicATK1_8: -1436370838979285819
+      basicATK1_9: -2694895993045045410
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

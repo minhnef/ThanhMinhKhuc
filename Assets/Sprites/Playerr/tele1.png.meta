@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: e7cc6c6376ad0c84cbf0c6d31cf0f6d1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5224453241309011206
+    second: tele1_0
+  - first:
+      213: -2852373151555687069
+    second: tele1_1
+  - first:
+      213: -5581246978075968868
+    second: tele1_2
+  - first:
+      213: 2078849805524359336
+    second: tele1_3
+  - first:
+      213: -7737292587959585214
+    second: tele1_4
+  - first:
+      213: 2345580073187151514
+    second: tele1_5
+  - first:
+      213: -3368123440525893094
+    second: tele1_6
+  - first:
+      213: 6222376594885757474
+    second: tele1_7
+  - first:
+      213: 5801365097307072453
+    second: tele1_8
+  - first:
+      213: 7850737184836162515
+    second: tele1_9
+  - first:
+      213: -9170808779799522436
+    second: tele1_10
+  - first:
+      213: 24384395983116364
+    second: tele1_11
+  - first:
+      213: 8776274555534218489
+    second: tele1_12
+  - first:
+      213: 3424355351905985863
+    second: tele1_13
+  - first:
+      213: -4568990152301373768
+    second: tele1_14
+  - first:
+      213: 1266656561356343514
+    second: tele1_15
+  - first:
+      213: 3546360084588096124
+    second: tele1_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 12
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tele1_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 154
+        width: 27
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af2632615730f77b0800000000000000
+      internalID: -5224453241309011206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 154
+        width: 27
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d69ae2bb55a68d0800000000000000
+      internalID: -2852373151555687069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_2
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 156
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a3f04b17d6b82b0800000000000000
+      internalID: -5581246978075968868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_3
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 157
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a85ba742ee89dc10800000000000000
+      internalID: 2078849805524359336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_4
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 158
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 246f76b926d9f9490800000000000000
+      internalID: -7737292587959585214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_5
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 159
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e0e8e26ac2d8020800000000000000
+      internalID: 2345580073187151514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 93
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a12a9cf63950241d0800000000000000
+      internalID: -3368123440525893094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_7
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 92
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22aced4ab825a5650800000000000000
+      internalID: 6222376594885757474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_8
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 91
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7665da1d6928050800000000000000
+      internalID: 5801365097307072453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_9
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 91
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d31c17efdb63fc60800000000000000
+      internalID: 7850737184836162515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_10
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 91
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c731409f00ebab080800000000000000
+      internalID: -9170808779799522436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_11
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 91
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48d2ac9a71a65000800000000000000
+      internalID: 24384395983116364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_12
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 26
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f49ae5a5379bc970800000000000000
+      internalID: 8776274555534218489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_13
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 24
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 745601fac01c58f20800000000000000
+      internalID: 3424355351905985863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_14
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 24
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b691ddf9afa790c0800000000000000
+      internalID: -4568990152301373768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_15
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 24
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad800187e61149110800000000000000
+      internalID: 1266656561356343514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tele1_16
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 25
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a6f7f15b3373130800000000000000
+      internalID: 3546360084588096124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tele1_0: -5224453241309011206
+      tele1_1: -2852373151555687069
+      tele1_10: -9170808779799522436
+      tele1_11: 24384395983116364
+      tele1_12: 8776274555534218489
+      tele1_13: 3424355351905985863
+      tele1_14: -4568990152301373768
+      tele1_15: 1266656561356343514
+      tele1_16: 3546360084588096124
+      tele1_2: -5581246978075968868
+      tele1_3: 2078849805524359336
+      tele1_4: -7737292587959585214
+      tele1_5: 2345580073187151514
+      tele1_6: -3368123440525893094
+      tele1_7: 6222376594885757474
+      tele1_8: 5801365097307072453
+      tele1_9: 7850737184836162515
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
