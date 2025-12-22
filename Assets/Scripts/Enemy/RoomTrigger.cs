@@ -7,8 +7,9 @@ public class RoomTrigger : MonoBehaviour
     
     [SerializeField]
     private List<Enemy> enemies = new List<Enemy>();
-    [SerializeField]
-    private bool isActive = false;
+    public bool isActive = false;
+    
+    public bool isCleared = false;
     void Awake()
     {
         enemies.Clear();
@@ -38,5 +39,17 @@ public class RoomTrigger : MonoBehaviour
             enemy.gameObject.SetActive(true);
         }
         Debug.Log("Room Activated with " + enemies.Count + " enemies.");
+    }
+    public void CheckRoomCleared()
+    {
+        foreach (Enemy enemy in enemies)
+        {
+            if (enemy != null && enemy.gameObject.activeInHierarchy)
+            {
+                return; // There are still active enemies
+            }
+        }
+        isCleared = true;
+        Debug.Log("Room Cleared!");
     }
 }

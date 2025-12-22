@@ -28,10 +28,15 @@ public class Enemy : MonoBehaviour
 
     private bool inRange;
 
+    void Awake()
+    {
+        
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        player = FindAnyObjectByType<PlayerController>().transform;
     }
     void Update()
     {
@@ -101,9 +106,9 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("Attack");
 
         Collider2D col = Physics2D.OverlapCircle(attackPoint.position, attackRadius, playerMask);
-        if (col != null && col.TryGetComponent<PlayerController>(out var playerController))
+        if (col != null && col.TryGetComponent<PlayerStatus>(out var playerStatus))
         {
-            playerController.takeDamage(1);
+            playerStatus.TakeDamage(1);
         }
     }
 
@@ -113,16 +118,22 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (maxHealth <= 0) return;
-
+        HitStop.Instance?.TriggerHitStop(0.06f);
+        Knockback(5f, (Vector2.right * -direction).normalized);
         maxHealth -= damage;
         if (maxHealth <= 0)
             Die();
     }
 
-    private void Die()
+    public void Knockback(float knockbackForce, Vector2 knockbackDirection)
+    {
+        rb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
+    }
+    private async void Die()
     {
         animator.SetTrigger("Died");
-        Destroy(gameObject, 0.6f); // Chờ animation 1 chút
+        await System.Threading.Tasks.Task.Delay(500); // Chờ animation kết thúc
+        gameObject.SetActive(false); // Chờ animation 1 chút
     }
 
     //
