@@ -8,6 +8,7 @@ TagManager:
   - NPC
   - Wall
   - DeadZone
+  - PlayerInteract
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ public class PlayerStatus : MonoBehaviour
     private PlayerController playerController;
     [SerializeField]
     private RoomTrigger[] roomTriggers;
+    [SerializeField]
     private List<CheckPoint> checkpoints = new List<CheckPoint>();
     private Vector3 startPos;
 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8971707092505833270}
   - component: {fileID: 8788916720067179313}
   - component: {fileID: 552479045673161503}
+  - component: {fileID: 6214456602768569845}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -32,13 +33,14 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1465251952842562973}
   - {fileID: 8623477334083488175}
   - {fileID: 4250695279536128781}
   - {fileID: 7778500721921602146}
+  - {fileID: 5092907261456308054}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &4922513329481213582
@@ -182,8 +184,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.15097237, y: 0.00028300285}
-  m_Size: {x: 0.89886093, y: 2.3566327}
+  m_Offset: {x: -0.018225193, y: 0.00028300285}
+  m_Size: {x: 0.96654034, y: 2.3566327}
   m_Direction: 0
 --- !u!114 &8788916720067179313
 MonoBehaviour:
@@ -197,15 +199,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39127278e8be27e43acca74e2d12e2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  speed: 5
+  speed: 10
   jumpForce: 12
   isGrounded: 0
+  impulseSource: {fileID: 0}
   fallMultiplier: 3
   lowJumpMultiplier: 1.5
   coyoteTime: 0.15
   jumpBufferTime: 0.15
   attackPoint: {fileID: 4250695279536128781}
-  attackRange: 1
+  attackRange: 3.3
+  comboResetTime: 0.7
 --- !u!114 &552479045673161503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +223,89 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDialogue
   dialogueUI: {fileID: 0}
+--- !u!114 &6214456602768569845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718191716571112140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721e59d1652167e4d8d74dd8935a4350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStatus
+  maxHealth: 3
+  currentHealth: 0
+  roomTriggers: []
+--- !u!1 &1752333936707376039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5092907261456308054}
+  - component: {fileID: 6163941218151056860}
+  m_Layer: 6
+  m_Name: InteractPoint
+  m_TagString: PlayerInteract
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5092907261456308054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752333936707376039}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8894211891848305146}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &6163941218151056860
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752333936707376039}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &5660257941693301601
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7778500721921602146
 Transform:
   m_ObjectHideFlags: 0
