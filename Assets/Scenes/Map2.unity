@@ -204,12 +204,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8546019}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 265, y: 20, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300605219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8546022
 MonoBehaviour:
@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
   destination: {fileID: 1237252855}
+  playerPosition: {fileID: 0}
 --- !u!58 &8546023
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1287,12 +1288,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243556693}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 97.5, y: -5.2, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300605219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &243556695
 MonoBehaviour:
@@ -1306,7 +1307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9b647ec6b9c844b8f778e41bd26469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
-  destination: {fileID: 494712541}
+  destination: {fileID: 1883070850}
+  playerPosition: {fileID: 0}
 --- !u!212 &243556696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1428,12 +1430,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321797459}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 300, y: -131.4, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300605219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &321797461
 MonoBehaviour:
@@ -1448,6 +1450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
   destination: {fileID: 1797033103}
+  playerPosition: {fileID: 0}
 --- !u!212 &321797462
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1814,6 +1817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
   destination: {fileID: 243556694}
+  playerPosition: {fileID: 0}
 --- !u!212 &494712540
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1880,12 +1884,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494712538}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 36.9, y: -71.8, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300605219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &494712542
 CircleCollider2D:
@@ -2266,12 +2270,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622907549}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 313.8, y: -33.2, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300605219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &622907551
 MonoBehaviour:
@@ -2286,6 +2290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
   destination: {fileID: 1049458861}
+  playerPosition: {fileID: 0}
 --- !u!212 &622907552
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -466728,6 +466733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
   destination: {fileID: 1223763174}
+  playerPosition: {fileID: 0}
 --- !u!212 &710365275
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -466794,12 +466800,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710365273}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 293.5, y: -45.7, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300605219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &710365277
 CircleCollider2D:
@@ -481785,6 +481791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
   destination: {fileID: 622907550}
+  playerPosition: {fileID: 0}
 --- !u!212 &1049458860
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -481851,12 +481858,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049458858}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 300, y: -106, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300605219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1049458862
 CircleCollider2D:
@@ -482005,7 +482012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1752333936707376039, guid: 08814ef51c69a5448a7de3398258342f, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: PlayerInteract
       objectReference: {fileID: 0}
     - target: {fileID: 6163941218151056860, guid: 08814ef51c69a5448a7de3398258342f, type: 3}
       propertyPath: m_Radius
@@ -482116,12 +482123,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223763173}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 337, y: 8.1, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300605219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1223763175
 MonoBehaviour:
@@ -482136,6 +482143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
   destination: {fileID: 710365276}
+  playerPosition: {fileID: 0}
 --- !u!212 &1223763176
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -482262,6 +482270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
   destination: {fileID: 8546021}
+  playerPosition: {fileID: 0}
 --- !u!212 &1237252854
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -482328,12 +482337,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237252852}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 295.4, y: 25.9, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300605219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1237252856
 CircleCollider2D:
@@ -482609,6 +482618,48 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 817444544777194951, guid: 3c9d09b9928e0004e9a7ed163b533817, type: 3}
   m_PrefabInstance: {fileID: 1253366311}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1300605218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1300605219}
+  m_Layer: 0
+  m_Name: Telegates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1300605219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300605218}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8546021}
+  - {fileID: 1237252855}
+  - {fileID: 1223763174}
+  - {fileID: 710365276}
+  - {fileID: 622907550}
+  - {fileID: 1049458861}
+  - {fileID: 321797460}
+  - {fileID: 1797033103}
+  - {fileID: 1883070850}
+  - {fileID: 243556694}
+  - {fileID: 494712541}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1310571638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -501243,6 +501294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
   destination: {fileID: 321797460}
+  playerPosition: {fileID: 0}
 --- !u!212 &1797033102
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -501309,12 +501361,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797033100}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 267.7, y: -115.6, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300605219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1797033104
 CircleCollider2D:
@@ -501636,6 +501688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
   destination: {fileID: 243556694}
+  playerPosition: {fileID: 0}
 --- !u!212 &1883070849
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -501702,12 +501755,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883070847}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 163.7, y: 20.6, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300605219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1883070851
 CircleCollider2D:
@@ -502600,14 +502653,4 @@ SceneRoots:
   - {fileID: 76032953}
   - {fileID: 497046067}
   - {fileID: 909409486}
-  - {fileID: 8546021}
-  - {fileID: 1237252855}
-  - {fileID: 1223763174}
-  - {fileID: 710365276}
-  - {fileID: 622907550}
-  - {fileID: 1049458861}
-  - {fileID: 321797460}
-  - {fileID: 1797033103}
-  - {fileID: 1883070850}
-  - {fileID: 243556694}
-  - {fileID: 494712541}
+  - {fileID: 1300605219}

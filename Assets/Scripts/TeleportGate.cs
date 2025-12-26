@@ -4,17 +4,32 @@ public class TeleportGate : MonoBehaviour
 {
     [SerializeField] private Transform destination;
     private bool isActive;
+    [SerializeField] private Transform playerPosition;
 
     void Awake()
     {
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
         isActive = false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("PlayerInteract"))
         {
 
             SetActivateGate(true);
+            // if (isActive && Input.GetKeyDown(KeyCode.E))
+            // {
+            //     Debug.Log("Teleporting Player...");
+            //     Teleport(collision.gameObject);
+            // }
+        }
+    }
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerInteract"))
+        {
+
+            // SetActivateGate(true);
             if (isActive && Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Teleporting Player...");
@@ -22,7 +37,6 @@ public class TeleportGate : MonoBehaviour
             }
         }
     }
-
     private void Teleport(GameObject player)
     {
 
@@ -30,6 +44,8 @@ public class TeleportGate : MonoBehaviour
     }
     public void SetActivateGate(bool active = true)
     {
+     
         isActive = active;
+
     }
 }
