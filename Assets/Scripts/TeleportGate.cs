@@ -4,12 +4,12 @@ public class TeleportGate : MonoBehaviour
 {
     [SerializeField] private Transform destination;
     private bool isActive;
-    [SerializeField] private Transform playerPosition;
-
+    [SerializeField] private Sprite activeSprite;
+    [SerializeField] private Sprite inactiveSprite;
     void Awake()
     {
-        playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
         isActive = false;
+        GetComponent<SpriteRenderer>().sprite = inactiveSprite;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,6 +46,6 @@ public class TeleportGate : MonoBehaviour
     {
      
         isActive = active;
-
+        GetComponent<SpriteRenderer>().sprite = active ? activeSprite : inactiveSprite;
     }
 }

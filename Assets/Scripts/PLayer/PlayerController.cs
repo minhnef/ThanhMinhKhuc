@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float comboResetTime = 0.4f;
 
     private int attackIndex = 0;
+    private int damage = 1;
     private float comboTimer;
     private Vector3 respawnPoint;
 
@@ -110,7 +111,7 @@ public class PlayerController : MonoBehaviour
             Enemy enemyScript = enemy.GetComponent<Enemy>();
             if (enemyScript != null)
             {
-                enemyScript.TakeDamage(0);
+                enemyScript.TakeDamage(damage);
             }
         }
     }
