@@ -4,23 +4,20 @@ using UnityEngine;
 public class AnimationManager : MonoBehaviour
 {
     public static AnimationManager Instance;
-    [SerializeField] private Animator playerAnimator;
     [SerializeField] private Animator hoXamAnimator;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
-
-    // #region playerAnimStates
-    // public void PlayRunAnim(bool isRunning)
-    // {
-    //     playerAnimator.SetBool("isRunning", isRunning);
-    // }
-    // public void PlayAttackAnim()
-    // {
-    //     playerAnimator.SetTrigger("Attack");
-    // }
-    
-    // #endregion
-
-    #region hoXamAnimStates
+    #region HoXamAnimStates
     public void PlayHoXamAttack1Anim()
     {
         hoXamAnimator.SetTrigger("Attack1");
