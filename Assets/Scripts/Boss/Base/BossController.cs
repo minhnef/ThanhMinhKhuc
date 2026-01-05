@@ -3,8 +3,8 @@ using UnityEngine;
 public enum BossState
 {
     Idle,
-    Moving,
-    Attacking,
+    Move,
+    Attack,
     Hurt,
     Dead
 }
@@ -45,10 +45,10 @@ public class BossController : MonoBehaviour
             case BossState.Idle:
                 // Idle behavior
                 break;
-            case BossState.Moving:
+            case BossState.Move:
                 // Moving behavior
                 break;
-            case BossState.Attacking:
+            case BossState.Attack:
                 // Attacking behavior
                 break;
             case BossState.Hurt:
@@ -62,11 +62,7 @@ public class BossController : MonoBehaviour
         }
     }
     
-    public virtual void OnHurt()
-    {
-        ChangeState(BossState.Hurt);
-        // Additional hurt logic
-    }
+
     public virtual void OnDeath()
     {
         ChangeState(BossState.Dead);

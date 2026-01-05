@@ -612240,7 +612240,12 @@ GameObject:
   - component: {fileID: 1922304983}
   - component: {fileID: 1922304982}
   - component: {fileID: 1922304981}
+  - component: {fileID: 1922304989}
   - component: {fileID: 1922304984}
+  - component: {fileID: 1922304988}
+  - component: {fileID: 1922304987}
+  - component: {fileID: 1922304986}
+  - component: {fileID: 1922304985}
   m_Layer: 0
   m_Name: Ho_xam
   m_TagString: Untagged
@@ -612282,8 +612287,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -3.32, y: -1.06}
-  m_Radius: 2.42
+  m_Offset: {x: -0.26, y: -0.08}
+  m_Radius: 0.24
 --- !u!212 &1922304982
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -612352,7 +612357,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 270.22, y: -129.98, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -612379,6 +612384,86 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1922304985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922304980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed354881a6771b41b51958271ae18f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoXamHealth
+  maxHealth: 200
+  phase: 0
+--- !u!114 &1922304986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922304980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54473922c028b4c4193f7f51db9b8b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoXamController
+  currentState: 0
+  attackRange: 1.5
+--- !u!114 &1922304987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922304980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcca4c1e5b1a0c4abff1f1198db4a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoXamCombat
+--- !u!114 &1922304988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922304980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f5f5c09e6d93441af42cdbe41a1375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoXamMovement
+  moveSpeed: 2
+--- !u!50 &1922304989
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922304980}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &1922498040
 GameObject:
   m_ObjectHideFlags: 0
@@ -613045,14 +613130,50 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9148361683251573000, guid: b8e2ad856dae93340aa5ac281fbf07d6, type: 3}
+      propertyPath: Lens.OrthographicSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9148361683251573000, guid: b8e2ad856dae93340aa5ac281fbf07d6, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 1690314530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5430642818514239884, guid: b8e2ad856dae93340aa5ac281fbf07d6, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1238827437794704583}
   m_SourcePrefab: {fileID: 100100000, guid: b8e2ad856dae93340aa5ac281fbf07d6, type: 3}
+--- !u!1 &1238827437794704581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5430642818514239884, guid: b8e2ad856dae93340aa5ac281fbf07d6, type: 3}
+  m_PrefabInstance: {fileID: 1238827437794704580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1238827437794704582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2479127628970971303, guid: b8e2ad856dae93340aa5ac281fbf07d6, type: 3}
+  m_PrefabInstance: {fileID: 1238827437794704580}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238827437794704581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineImpulseSource
+--- !u!114 &1238827437794704583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238827437794704581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827df6dc6b429ec4ab52d48d773f8924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShaking
+  impulseSource: {fileID: 1238827437794704582}
 --- !u!1001 &1982737746940052692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613240,6 +613361,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1655423101944179229, guid: 6977c56fb72429b40aa1eed18c8097df, type: 3}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4131490977887939122, guid: 6977c56fb72429b40aa1eed18c8097df, type: 3}
       propertyPath: m_Name
       value: Main Camera

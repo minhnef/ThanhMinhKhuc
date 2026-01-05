@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private int attackIndex = 0;
     private int damage = 1;
+    public int AttackDamage => damage;
     private float comboTimer;
     private Vector3 respawnPoint;
 

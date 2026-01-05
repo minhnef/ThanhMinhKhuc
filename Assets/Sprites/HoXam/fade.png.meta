@@ -1,46 +1,31 @@
 fileFormatVersion: 2
-guid: 9f070ed5fc09f9e489b5ddcf7b4a9760
+guid: 0312e64b5fb181845a55acc5b2f79ae5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3604192591476135790
-    second: dead_0
+      213: -7275759930942846948
+    second: fade_0
   - first:
-      213: -2991312472683628695
-    second: dead_1
+      213: -2333755034497794496
+    second: fade_1
   - first:
-      213: 4404202361452085733
-    second: dead_2
+      213: -1646912265635722837
+    second: fade_2
   - first:
-      213: -2479182351684794062
-    second: dead_3
+      213: -5899897154547126136
+    second: fade_3
   - first:
-      213: -2436804021803932963
-    second: dead_4
+      213: -4296845282706175537
+    second: fade_4
   - first:
-      213: 5825826999855438651
-    second: dead_5
+      213: -6090827610516948300
+    second: fade_5
   - first:
-      213: -5348288698317918056
-    second: dead_6
+      213: -7672112721670710104
+    second: fade_6
   - first:
-      213: -2347424302258597211
-    second: dead_7
-  - first:
-      213: -1357336192515539430
-    second: dead_8
-  - first:
-      213: 9219537837294063077
-    second: dead_9
-  - first:
-      213: -2577281847853966500
-    second: dead_10
-  - first:
-      213: -362096492941233621
-    second: dead_11
-  - first:
-      213: -5152885088230980940
-    second: dead_12
+      213: -7671361512754994656
+    second: fade_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -87,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 120
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dead_0
+      name: fade_0
       rect:
         serializedVersion: 2
-        x: 131
-        y: 369
-        width: 134
-        height: 111
+        x: 117
+        y: 393
+        width: 136
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e67970de01aa40230800000000000000
-      internalID: 3604192591476135790
+      spriteID: c18812534ee470b90800000000000000
+      internalID: -7275759930942846948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead_1
+      name: fade_1
       rect:
         serializedVersion: 2
-        x: 648
-        y: 369
-        width: 133
-        height: 109
+        x: 597
+        y: 393
+        width: 136
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9673f7d9729bc76d0800000000000000
-      internalID: -2991312472683628695
+      spriteID: 04ebaff2926dc9fd0800000000000000
+      internalID: -2333755034497794496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead_2
+      name: fade_2
       rect:
         serializedVersion: 2
-        x: 1164
-        y: 370
-        width: 133
-        height: 107
+        x: 1077
+        y: 393
+        width: 98
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e1c94996bede1d30800000000000000
-      internalID: 4404202361452085733
+      spriteID: ba98c86250ef429e0800000000000000
+      internalID: -1646912265635722837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead_3
+      name: fade_3
       rect:
         serializedVersion: 2
-        x: 1681
-        y: 374
-        width: 132
-        height: 105
+        x: 1557
+        y: 393
+        width: 98
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 239096259cc289dd0800000000000000
-      internalID: -2479182351684794062
+      spriteID: 88071e30cca5f1ea0800000000000000
+      internalID: -5899897154547126136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead_4
+      name: fade_4
       rect:
         serializedVersion: 2
-        x: 2199
-        y: 376
-        width: 133
-        height: 105
+        x: 2048
+        y: 393
+        width: 84
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd2222527abbe2ed0800000000000000
-      internalID: -2436804021803932963
+      spriteID: fc94c752bf98e54c0800000000000000
+      internalID: -4296845282706175537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead_5
+      name: fade_5
       rect:
         serializedVersion: 2
-        x: 2708
-        y: 376
-        width: 138
-        height: 102
+        x: 128
+        y: 123
+        width: 84
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,20 +246,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3b53413ace79d050800000000000000
-      internalID: 5825826999855438651
+      spriteID: 4bafefe0f88097ba0800000000000000
+      internalID: -6090827610516948300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead_6
+      name: fade_6
       rect:
         serializedVersion: 2
-        x: 3222
-        y: 373
-        width: 140
-        height: 106
+        x: 608
+        y: 123
+        width: 54
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,20 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 890368ce3cf07c5b0800000000000000
-      internalID: -5348288698317918056
+      spriteID: 8acdf04d02e278590800000000000000
+      internalID: -7672112721670710104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead_7
+      name: fade_7
       rect:
         serializedVersion: 2
-        x: 125
-        y: 79
-        width: 145
-        height: 115
+        x: 1088
+        y: 123
+        width: 54
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,118 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a2d1c6c8064c6fd0800000000000000
-      internalID: -2347424302258597211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dead_8
-      rect:
-        serializedVersion: 2
-        x: 642
-        y: 84
-        width: 153
-        height: 113
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1e7454ace5c92de0800000000000000
-      internalID: -1357336192515539430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dead_9
-      rect:
-        serializedVersion: 2
-        x: 1158
-        y: 84
-        width: 164
-        height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ed8f29d0d062ff70800000000000000
-      internalID: 9219537837294063077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dead_10
-      rect:
-        serializedVersion: 2
-        x: 1674
-        y: 84
-        width: 177
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c5b1a9c70d7ab3cd0800000000000000
-      internalID: -2577281847853966500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dead_11
-      rect:
-        serializedVersion: 2
-        x: 2190
-        y: 90
-        width: 195
-        height: 73
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b22b2db782399faf0800000000000000
-      internalID: -362096492941233621
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dead_12
-      rect:
-        serializedVersion: 2
-        x: 2706
-        y: 89
-        width: 193
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4b2c59b30564d78b0800000000000000
-      internalID: -5152885088230980940
+      spriteID: 022a2a84959d98590800000000000000
+      internalID: -7671361512754994656
       vertices: []
       indices: 
       edges: []
@@ -435,19 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dead_0: 3604192591476135790
-      dead_1: -2991312472683628695
-      dead_10: -2577281847853966500
-      dead_11: -362096492941233621
-      dead_12: -5152885088230980940
-      dead_2: 4404202361452085733
-      dead_3: -2479182351684794062
-      dead_4: -2436804021803932963
-      dead_5: 5825826999855438651
-      dead_6: -5348288698317918056
-      dead_7: -2347424302258597211
-      dead_8: -1357336192515539430
-      dead_9: 9219537837294063077
+      fade_0: -7275759930942846948
+      fade_1: -2333755034497794496
+      fade_2: -1646912265635722837
+      fade_3: -5899897154547126136
+      fade_4: -4296845282706175537
+      fade_5: -6090827610516948300
+      fade_6: -7672112721670710104
+      fade_7: -7671361512754994656
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

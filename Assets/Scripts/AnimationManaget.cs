@@ -20,15 +20,15 @@ public class AnimationManager : MonoBehaviour
     #region HoXamAnimStates
     public void PlayHoXamAttack1Anim()
     {
-        hoXamAnimator.SetTrigger("Attack1");
+        hoXamAnimator.SetTrigger("attack1");
     }
     public void PlayHoXamAttack2Anim()
     {
-        hoXamAnimator.SetTrigger("Attack2");
+        hoXamAnimator.SetTrigger("attack2");
     }
     public void PlayHoXamAttack3Anim()
     {
-        hoXamAnimator.SetTrigger("Attack3");
+        hoXamAnimator.SetTrigger("attack3");
     }
     public void PlayHoXamHurtAnim()
     {

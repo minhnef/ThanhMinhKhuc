@@ -5,4 +5,6 @@ using UnityEngine;
 public abstract class BossCombat : MonoBehaviour
 {
     public abstract void PerformAttack();
+
+    public abstract void PerformAttackPhaseTwo();
 }
