@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public CinemachineImpulseSource impulseSource;
     [Header("Player State")]
-    
+
     private PlayerStatus playerStatus;
 
     [Header("Better Jump physic")]
@@ -30,8 +30,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpBufferTime = 0.15f;
     private float jumpBufferCounter;
     [Header("Health & Fighting")]
-    private int maxHealth;
-    private int currentHealth;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRange = 1f;
 
@@ -49,7 +47,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        maxHealth = currentHealth = 3;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         animator.speed = 1.3f;
@@ -100,21 +97,37 @@ public class PlayerController : MonoBehaviour
     }
     private void DoAttackDamage()
     {
+        EnableHitbox();
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
             attackPoint.position,
             attackRange,
             LayerMask.GetMask("Enemy")
         );
+        Collider2D hitBoss = Physics2D.OverlapCircle(
+            attackPoint.position,
+            attackRange,
+            LayerMask.GetMask("Boss")
+        );
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            impulseSource.GenerateImpulse(Vector3.right);   
+            impulseSource.GenerateImpulse(Vector3.right);
             Enemy enemyScript = enemy.GetComponent<Enemy>();
             if (enemyScript != null)
             {
                 enemyScript.TakeDamage(damage);
             }
         }
+        if (hitBoss != null)
+        {
+            impulseSource.GenerateImpulse(Vector3.right);
+            BossBase bossScript = hitBoss.GetComponent<BossBase>();
+            if (bossScript != null)
+            {
+                bossScript.TakeDamage(damage);
+            }
+        }
+        DisableHitbox();
     }
 
     private void OnDrawGizmosSelected()
@@ -136,7 +149,7 @@ public class PlayerController : MonoBehaviour
         else if (movement > 0 && !isFacingRight) Flip();
     }
 
-#region Better Jumping
+    #region Better Jumping
     private void HandleCoyoteTime()
     {
         if (isGrounded)
@@ -180,7 +193,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-#endregion
+    #endregion
     private void Flip()
     {
         isFacingRight = !isFacingRight;
@@ -211,7 +224,7 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("DeadZone"))
+        if (collision.gameObject.CompareTag("DeadZone"))
         {
             // Reset player position or handle death
             transform.position = new Vector3(0, 0, 0); // Example respawn position
@@ -219,7 +232,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+
 
     public void EnableHitbox()
     {
