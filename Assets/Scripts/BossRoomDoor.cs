@@ -1,14 +1,12 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossRoomDoor : MonoBehaviour
 {
     [SerializeField] private RoomTrigger bossRoomTrigger;
-    private Animator animator;
 
-    void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,13 +15,15 @@ public class BossRoomDoor : MonoBehaviour
         {
             if (bossRoomTrigger != null && bossRoomTrigger.isCleared)
             {
-                OpenDoor();
+                Debug.Log("Player entered boss room door and room is cleared. Changing map...");
+                ChangeMap();
             }
         }
+        Debug.Log("Player entered boss room door but room is not cleared yet.");
     }
 
-    private void OpenDoor()
+    private void ChangeMap()
     {
-        animator.SetBool("isOpen", true);
+        SceneManager.LoadScene("Map2");
     }
 }

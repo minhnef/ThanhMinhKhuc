@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 
 public abstract class BossBase : MonoBehaviour
@@ -29,6 +30,8 @@ public abstract class BossBase : MonoBehaviour
     protected bool isAttacking;
     protected bool isDead;
 
+    public RoomTrigger bossRoomTrigger;
+
     protected virtual void Start()
     {
         currentHealth = maxHealth;
@@ -38,19 +41,30 @@ public abstract class BossBase : MonoBehaviour
     }
 
     protected virtual void Update()
+{
+    if (isDead || playerTransform == null) return;
+
+    float distance = Vector2.Distance(transform.position, playerTransform.position);
+
+    // if (distance > detectionRange)
+    // {
+    //     Idle();
+    //     return;
+    // }
+
+    if (distance > attackRange3)
     {
-        if (isAttacking || isDead || playerTransform == null) return;
-        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
-        if (distanceToPlayer <= detectionRange)
+        MoveTowardsPlayer();
+    }
+    else
+    {
+        if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
         {
-            if (Time.time - lastAttackTime >= attackCooldown)
-                Attack();
-        }
-        else
-        {
-            MoveTowardsPlayer();
+            Attack();
         }
     }
+}
+
 
     private void Idle()
     {
@@ -61,7 +75,8 @@ public abstract class BossBase : MonoBehaviour
     {
         // animator.SetBool("isMoving", true);
         Vector2 direction = (playerTransform.position - transform.position).normalized;
-        rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocityY);
+
+        rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
         Flip();
     }
 
@@ -90,11 +105,19 @@ public abstract class BossBase : MonoBehaviour
         if (currentHealth <= 0) Die();
     }
 
-    private void Die()
+    private async void Die()
     {
+        Debug.Log("Boss Died");
+
         isDead = true;
-        animator.SetTrigger("Die");
+        
+        Time.timeScale = 0.5f;
+        DOVirtual.DelayedCall(0.5f, () => animator.SetTrigger("Die"));
+        await DOVirtual.DelayedCall(1.5f, () => gameObject.SetActive(false)).AsyncWaitForCompletion();
+        Time.timeScale = 1f;
         rb.linearVelocity = Vector2.zero; // Dừng mọi chuyển động khi chết
         this.enabled = false; // Tắt script Boss
+        bossRoomTrigger.CheckRoomCleared();
     }
+    
 }
