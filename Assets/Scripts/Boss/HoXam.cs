@@ -24,10 +24,10 @@ public class HoXam : BossBase
         float dist = Vector2.Distance(transform.position, playerTransform.position);
         isAttacking = true;
 
-        int attackType;
-        if (dist <= attackRange2) attackType = 2; // Cào
-        else if (dist <= attackRange1) attackType = 1; // Nhảy lao
-        else attackType = 3; // Gầm
+        int attackType = 0;
+        if (dist <= attackRange1) attackType = 1; // Cào
+        else if (dist <= attackRange2) attackType = Random.Range(2,4); // Nhảy lao// Gầm
+        // else attackType = 3; // Gầm
 
         animator.SetInteger("AttackType", attackType);
         animator.SetTrigger("Attack");
@@ -64,6 +64,7 @@ public class HoXam : BossBase
         {
             if (hitResults[i].CompareTag("Player"))
             {
+                AnimationManager.instance?.PlayerHurtAnim();
                 playerStatus.TakeDamage(damage);
                 Debug.Log($"Đã trúng Player bằng {attackPoint.name}");
                 break; // Chỉ gây dame 1 lần mỗi đòn
@@ -73,11 +74,12 @@ public class HoXam : BossBase
 
     public void LeapLogic()
     {
-        float leapForce = 70f;
+        float leapForce = 50f;
         Vector2 direction = (playerTransform.position - transform.position).normalized;
         rb.AddForce(new Vector2(direction.x * leapForce, 2f), ForceMode2D.Impulse);
 
         CheckPolygonDamage(attackPoint1, 10);
+        
     }
 
     public void ScratchDamage()

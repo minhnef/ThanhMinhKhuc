@@ -24,6 +24,7 @@ public class LeQuy : BossBase
 
     protected override void Attack()
     {
+        Debug.Log("LeQuy Attack Called");
         // Kiểm tra khoảng cách để quyết định chọn ngẫu nhiên hay chọn theo tầm đánh
         float dist = Vector2.Distance(transform.position, playerTransform.position);
         isAttacking = true; 
@@ -44,9 +45,8 @@ public class LeQuy : BossBase
             case 3: Invoke(nameof(HandleAttack3), 0.4f); break;
         }
 
-        // Tự động kết thúc trạng thái tấn công sau một khoảng thời gian
-        // Tốt nhất là dùng Animation Event, nhưng dùng DelayedCall như bạn cũng ổn
         DOVirtual.DelayedCall(1.5f, () => EndAttack());
+        Debug.Log("LeQuy Attack Executed");
     }
 
     // Các hàm wrapper để Invoke

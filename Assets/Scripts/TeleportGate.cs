@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class TeleportGate : MonoBehaviour
@@ -32,8 +33,12 @@ public class TeleportGate : MonoBehaviour
             // SetActivateGate(true);
             if (isActive && Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Teleporting Player...");
-                Teleport(collision.gameObject);
+                AnimationManager.instance?.PlayerTeleAnim();
+                DOVirtual.DelayedCall(0.5f, () =>
+                {
+                    Debug.Log("Teleporting Player...");
+                    Teleport(collision.gameObject);
+                });
             }
         }
     }
@@ -44,7 +49,7 @@ public class TeleportGate : MonoBehaviour
     }
     public void SetActivateGate(bool active = true)
     {
-     
+
         isActive = active;
         GetComponent<SpriteRenderer>().sprite = active ? activeSprite : inactiveSprite;
     }

@@ -613484,14 +613484,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1655423101944179229, guid: 6977c56fb72429b40aa1eed18c8097df, type: 3}
-      propertyPath: orthographic size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655423101944179229, guid: 6977c56fb72429b40aa1eed18c8097df, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 1023
-      objectReference: {fileID: 0}
     - target: {fileID: 4131490977887939122, guid: 6977c56fb72429b40aa1eed18c8097df, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -613676,11 +613668,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1890414226299405001, guid: ddd5590947ddf9b4698ef4946c7f9516, type: 3}
       propertyPath: attackRange1
-      value: 20
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1890414226299405001, guid: ddd5590947ddf9b4698ef4946c7f9516, type: 3}
       propertyPath: attackRange2
-      value: 7.45
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1890414226299405001, guid: ddd5590947ddf9b4698ef4946c7f9516, type: 3}
       propertyPath: attackRange3

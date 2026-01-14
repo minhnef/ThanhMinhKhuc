@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
@@ -52,7 +53,7 @@ public abstract class BossBase : MonoBehaviour
     //     return;
     // }
 
-    if (distance > attackRange3)
+    if (distance > detectionRange)
     {
         MoveTowardsPlayer();
     }
@@ -61,6 +62,7 @@ public abstract class BossBase : MonoBehaviour
         if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
         {
             Attack();
+            MoveTowardsPlayer();
         }
     }
 }
@@ -103,6 +105,14 @@ public abstract class BossBase : MonoBehaviour
         animator.SetTrigger("Hurt");
 
         if (currentHealth <= 0) Die();
+
+        if(currentHealth == maxHealth / 2)
+        {
+            //TODO: change phase 2
+            attackCooldown = attackCooldown/2;
+            moveSpeed = moveSpeed*2;
+            armor+=5;
+        }
     }
 
     private async void Die()
@@ -111,13 +121,17 @@ public abstract class BossBase : MonoBehaviour
 
         isDead = true;
         
-        Time.timeScale = 0.5f;
-        DOVirtual.DelayedCall(0.5f, () => animator.SetTrigger("Die"));
+        Time.timeScale = 0.4f;
+        await PlayDieAnimation();
         await DOVirtual.DelayedCall(1.5f, () => gameObject.SetActive(false)).AsyncWaitForCompletion();
         Time.timeScale = 1f;
         rb.linearVelocity = Vector2.zero; // Dừng mọi chuyển động khi chết
-        this.enabled = false; // Tắt script Boss
+        enabled = false; // Tắt script Boss
         bossRoomTrigger.CheckRoomCleared();
     }
-    
+    private async Task PlayDieAnimation()
+    {
+        animator.SetTrigger("Die");
+        await Task.Yield(); // Chờ một frame để đảm bảo animation được kích hoạt
+    }
 }

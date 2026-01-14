@@ -6,7 +6,7 @@ public class PlayerStatus : MonoBehaviour
 {
     public int maxHealth = 30;
     public int currentHealth;
-    private PlayerController playerController;
+    public PlayerController playerController;
     [SerializeField]
     private RoomTrigger[] roomTriggers;
     [SerializeField]
@@ -64,6 +64,8 @@ public class PlayerStatus : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        if(playerController.isInvincible) return;
+        AnimationManager.instance?.PlayerHurtAnim();
         currentHealth -= damage;
         if (currentHealth <= 0)
         {

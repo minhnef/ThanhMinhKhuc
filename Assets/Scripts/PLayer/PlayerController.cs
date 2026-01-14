@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -42,6 +43,15 @@ public class PlayerController : MonoBehaviour
     private float comboTimer;
     private Vector3 respawnPoint;
 
+    [Header("Dash Settings")]
+    private bool isDashing;
+    [SerializeField] private float dashSpeed = 20f;
+    [SerializeField] private float dashDuration = 0.2f;
+    [SerializeField] private float dashCooldown = 1f;
+    private bool canDash = true;
+    [Header("Invincibility Settings")]
+    private int originalLayer;
+    public bool isInvincible; // Kiểm tra biến này trong hàm TakeDamage của Player
 
 
 
@@ -56,13 +66,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         movement = Input.GetAxisRaw("Horizontal");
-
+        StartDash();
         HandleMovement();
         HandleComboAttack();
         HandleCoyoteTime();
         HandleJumpBuffer();
         HandleJump();
         HandleBetterJump();
+
 
         // Animator parameters
         animator.SetBool("isGrounded", isGrounded);
@@ -132,8 +143,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-
-
         // Attack
         if (attackPoint != null)
         {
@@ -147,6 +156,43 @@ public class PlayerController : MonoBehaviour
 
         if (movement < 0 && isFacingRight) Flip();
         else if (movement > 0 && !isFacingRight) Flip();
+    }
+
+
+    private IEnumerator DashCoroutine()
+    {
+        canDash = false;
+        isDashing = true;
+        isInvincible = true; // Bắt đầu bất tử
+
+        // 1. Lưu Layer cũ và chuyển sang Layer xuyên thấu
+        originalLayer = gameObject.layer;
+        gameObject.layer = LayerMask.NameToLayer("PlayerDash");
+
+        // 2. Logic vật lý (như đã hướng dẫn trước đó)
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.AddForce(new Vector2(isFacingRight ? dashSpeed : -dashSpeed, 0f), ForceMode2D.Impulse);
+
+        AnimationManager.instance?.PlayDashAnim();
+
+        yield return new WaitForSeconds(dashDuration);
+
+        // 3. Trả lại trạng thái bình thường
+        rb.gravityScale = originalGravity;
+        rb.linearVelocity = Vector2.zero;
+        gameObject.layer = originalLayer; // Trả lại Layer gốc
+
+        isDashing = false;
+        isInvincible = false; // Kết thúc bất tử
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+    }
+    // Gọi hàm này khi nhấn nút Dash
+    public void StartDash()
+    {
+        if (canDash && Input.GetKeyDown(KeyCode.L)) StartCoroutine(DashCoroutine());
     }
 
     #region Better Jumping
