@@ -52,8 +52,8 @@ public class PlayerController : MonoBehaviour
     [Header("Invincibility Settings")]
     private int originalLayer;
     public bool isInvincible; // Kiểm tra biến này trong hàm TakeDamage của Player
-
-
+    private bool isAttacking;
+    private bool canCombo;
 
     void Start()
     {
@@ -90,22 +90,54 @@ public class PlayerController : MonoBehaviour
 
 
 
+    // private void HandleComboAttack()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.J))
+    //     {
+    //         comboTimer = comboResetTime;
+
+    //         attackIndex++;
+    //         if (attackIndex > 2)
+    //             attackIndex = 1;
+
+    //         animator.SetInteger("AttackIndex", attackIndex);
+    //         animator.SetTrigger("Attack");
+
+    //         DoAttackDamage();
+    //     }
+    // }
     private void HandleComboAttack()
+{
+    if (Input.GetKeyDown(KeyCode.J))
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        // Nếu đang không trong đòn đánh nào, bắt đầu đòn 1
+        if (!isAttacking)
         {
-            comboTimer = comboResetTime;
-
-            attackIndex++;
-            if (attackIndex > 2)
-                attackIndex = 1;
-
-            animator.SetInteger("AttackIndex", attackIndex);
-            animator.SetTrigger("Attack");
-
-            DoAttackDamage();
+            StartAttack();
+        }
+        // Nếu đang trong đòn đánh và được phép nối combo
+        else if (canCombo)
+        {
+            StartAttack();
         }
     }
+}
+
+private void StartAttack()
+{
+    isAttacking = true;
+    canCombo = false; // Reset lại quyền nối combo cho đòn mới
+    
+    comboTimer = comboResetTime;
+    attackIndex++;
+    
+    if (attackIndex > 3) attackIndex = 1;
+
+    animator.SetInteger("AttackIndex", attackIndex);
+    animator.SetTrigger("Attack");
+
+    DoAttackDamage(); // Gây sát thương
+}
     private void DoAttackDamage()
     {
         EnableHitbox();
@@ -140,7 +172,15 @@ public class PlayerController : MonoBehaviour
         }
         DisableHitbox();
     }
-
+    public void SetCanCombo()
+{
+    canCombo = true;
+}
+public void EndAttack() 
+    {
+        isAttacking = false;
+        canCombo = false;
+    }
     private void OnDrawGizmosSelected()
     {
         // Attack

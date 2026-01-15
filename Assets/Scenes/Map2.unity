@@ -482119,7 +482119,7 @@ PrefabInstance:
       objectReference: {fileID: 2014918118}
     - target: {fileID: 8788916720067179313, guid: 08814ef51c69a5448a7de3398258342f, type: 3}
       propertyPath: dashSpeed
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8788916720067179313, guid: 08814ef51c69a5448a7de3398258342f, type: 3}
       propertyPath: dashCooldown
