@@ -123,7 +123,7 @@ public abstract class BossBase : MonoBehaviour
         
         Time.timeScale = 0.4f;
         await PlayDieAnimation();
-        await DOVirtual.DelayedCall(1.5f, () => gameObject.SetActive(false)).AsyncWaitForCompletion();
+        gameObject.SetActive(false);
         Time.timeScale = 1f;
         rb.linearVelocity = Vector2.zero; // Dừng mọi chuyển động khi chết
         enabled = false; // Tắt script Boss
@@ -132,6 +132,15 @@ public abstract class BossBase : MonoBehaviour
     private async Task PlayDieAnimation()
     {
         animator.SetTrigger("Die");
-        await Task.Yield(); // Chờ một frame để đảm bảo animation được kích hoạt
+        
+        // Chờ animation khởi động
+        await Task.Delay(50);
+        
+        // Lấy animation state hiện tại
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        float animationDuration = stateInfo.length / stateInfo.speed;
+        
+        // Chờ animation kết thúc
+        await Task.Delay((int)(animationDuration * 1000));
     }
 }
