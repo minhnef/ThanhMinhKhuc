@@ -107,37 +107,37 @@ public class PlayerController : MonoBehaviour
     //     }
     // }
     private void HandleComboAttack()
-{
-    if (Input.GetKeyDown(KeyCode.J))
     {
-        // Nếu đang không trong đòn đánh nào, bắt đầu đòn 1
-        if (!isAttacking)
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            StartAttack();
-        }
-        // Nếu đang trong đòn đánh và được phép nối combo
-        else if (canCombo)
-        {
-            StartAttack();
+            // Nếu đang không trong đòn đánh nào, bắt đầu đòn 1
+            if (!isAttacking)
+            {
+                StartAttack();
+            }
+            // Nếu đang trong đòn đánh và được phép nối combo
+            else if (canCombo)
+            {
+                StartAttack();
+            }
         }
     }
-}
 
-private void StartAttack()
-{
-    isAttacking = true;
-    canCombo = false; // Reset lại quyền nối combo cho đòn mới
-    
-    comboTimer = comboResetTime;
-    attackIndex++;
-    
-    if (attackIndex > 3) attackIndex = 1;
+    private void StartAttack()
+    {
+        isAttacking = true;
+        canCombo = false; // Reset lại quyền nối combo cho đòn mới
 
-    animator.SetInteger("AttackIndex", attackIndex);
-    animator.SetTrigger("Attack");
+        comboTimer = comboResetTime;
+        attackIndex++;
 
-    DoAttackDamage(); // Gây sát thương
-}
+        if (attackIndex > 3) attackIndex = 1;
+
+        animator.SetInteger("AttackIndex", attackIndex);
+        animator.SetTrigger("Attack");
+
+        DoAttackDamage(); // Gây sát thương
+    }
     private void DoAttackDamage()
     {
         EnableHitbox();
@@ -173,10 +173,10 @@ private void StartAttack()
         DisableHitbox();
     }
     public void SetCanCombo()
-{
-    canCombo = true;
-}
-public void EndAttack() 
+    {
+        canCombo = true;
+    }
+    public void EndAttack()
     {
         isAttacking = false;
         canCombo = false;
@@ -192,6 +192,7 @@ public void EndAttack()
     }
     private void HandleMovement()
     {
+        if(isDashing)return;
         rb.linearVelocityX = movement * speed;
 
         if (movement < 0 && isFacingRight) Flip();
@@ -212,10 +213,10 @@ public void EndAttack()
         // 2. Logic vật lý (như đã hướng dẫn trước đó)
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
-        rb.AddForce(new Vector2(isFacingRight ? dashSpeed : -dashSpeed, 0f), ForceMode2D.Impulse);
+        rb.linearVelocity = new Vector2(isFacingRight ? dashSpeed : -dashSpeed, 0f);
 
         AnimationManager.instance?.PlayDashAnim();
-
+        Debug.Log("dashing");
         yield return new WaitForSeconds(dashDuration);
 
         // 3. Trả lại trạng thái bình thường

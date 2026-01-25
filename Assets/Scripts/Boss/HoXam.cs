@@ -40,9 +40,9 @@ public class HoXam : BossBase
             case 3: Invoke(nameof(RoarDamage), 0.6f); break;
         }
 
-        // Lưu ý: Thay vì DelayedCall cố định, hãy dùng Animation Event gọi EndAttack() 
+        //  dùng Animation Event gọi EndAttack() 
         // ở cuối mỗi Clip sẽ mượt hơn. Tạm thời giữ lại theo ý bạn:
-        DOVirtual.DelayedCall(1.5f, () => EndAttack());
+        
     }
 
     // Hàm dùng chung để quét sát thương bằng Polygon Collider
