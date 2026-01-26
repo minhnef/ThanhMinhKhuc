@@ -19,20 +19,10 @@ public class SFXManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         instance = this;
-        DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-        // if (sfxClips.Length == 0)
-        // {
-        //     Debug.Log("Missing AudioSources");
-        // }
+
 
         InitVolume();
     }
@@ -155,5 +145,11 @@ public class SFXManager : MonoBehaviour
 public enum SFXType
 {
     BUTTON_CLICK,
+    SLASH1,
+    SLASH2,
+    TIGER_SCRAP,
+    TIGER_ROAR,
+    TELEPORT,
+    DASH,
 
 }

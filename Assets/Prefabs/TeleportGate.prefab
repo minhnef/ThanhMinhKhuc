@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5466106493082092428}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 265, y: 20, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
@@ -78,15 +78,15 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1692083423
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 6326924360743257777, guid: 36700bec11e72d74b9f3a567e0a215f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.22, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -105,9 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportGate
   destination: {fileID: 0}
-  playerPosition: {fileID: 0}
-  activeSprite: {fileID: 1635044370023475632, guid: 3a91ed91972c51541a8f4e6ec391711b, type: 3}
-  inactiveSprite: {fileID: 768539965427458729, guid: f4bf4b88968d5bf4086a123c3b963085, type: 3}
+  activeSprite: {fileID: -5707431449762266262, guid: 42d559c3db63f8c48af4c2f70c529695, type: 3}
+  inactiveSprite: {fileID: 6326924360743257777, guid: 36700bec11e72d74b9f3a567e0a215f5, type: 3}
 --- !u!58 &7397494336572383472
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -143,4 +142,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.8

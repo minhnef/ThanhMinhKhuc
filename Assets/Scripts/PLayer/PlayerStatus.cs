@@ -71,6 +71,7 @@ public class PlayerStatus : MonoBehaviour
         {
             Die();
         }
+        playerController.EndAttack();
     }
 
     public void Die()

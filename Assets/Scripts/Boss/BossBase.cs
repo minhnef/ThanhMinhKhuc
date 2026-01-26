@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -28,13 +29,15 @@ public abstract class BossBase : MonoBehaviour
     [SerializeField] protected Transform attackPoint3;
     [SerializeField] protected LayerMask playerMask;
     protected Rigidbody2D rb;
-    protected bool isAttacking;
+    [SerializeField] protected bool isAttacking;
     protected bool isDead;
 
     public RoomTrigger bossRoomTrigger;
+    private CancellationTokenSource cancellationTokenSource;
 
     protected virtual void Start()
     {
+        cancellationTokenSource = new CancellationTokenSource();
         currentHealth = maxHealth;
         if (rb == null) rb = GetComponent<Rigidbody2D>();
         if (playerTransform == null) playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -42,30 +45,30 @@ public abstract class BossBase : MonoBehaviour
     }
 
     protected virtual void Update()
-{
-    if (isDead || playerTransform == null) return;
-
-    float distance = Vector2.Distance(transform.position, playerTransform.position);
-
-    // if (distance > detectionRange)
-    // {
-    //     Idle();
-    //     return;
-    // }
-
-    if (distance > detectionRange)
     {
-        MoveTowardsPlayer();
-    }
-    else
-    {
-        if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
+        if (isDead || playerTransform == null) return;
+
+        float distance = Vector2.Distance(transform.position, playerTransform.position);
+
+        // if (distance > detectionRange)
+        // {
+        //     Idle();
+        //     return;
+        // }
+
+        if (distance > detectionRange)
         {
-            Attack();
             MoveTowardsPlayer();
         }
+        else
+        {
+            if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
+            {
+                Attack();
+                MoveTowardsPlayer();
+            }
+        }
     }
-}
 
 
     private void Idle()
@@ -98,20 +101,22 @@ public abstract class BossBase : MonoBehaviour
     }
     public virtual void TakeDamage(float damage)
     {
+        EndAttack();
         if (isDead) return;
         float effectiveDamage = Mathf.Max(damage - armor, 1);
         currentHealth -= effectiveDamage;
 
-        animator.SetTrigger("Hurt");
+        if (!isAttacking)
+            animator.SetTrigger("Hurt");
 
         if (currentHealth <= 0) Die();
 
-        if(currentHealth == maxHealth / 2)
+        if (currentHealth == maxHealth / 2)
         {
             //TODO: change phase 2
-            attackCooldown = attackCooldown/2;
-            moveSpeed = moveSpeed*2;
-            armor+=5;
+            attackCooldown = attackCooldown / 2;
+            moveSpeed = moveSpeed * 2;
+            armor += 5;
         }
     }
 
@@ -120,9 +125,10 @@ public abstract class BossBase : MonoBehaviour
         Debug.Log("Boss Died");
 
         isDead = true;
-        
+
         Time.timeScale = 0.4f;
         await PlayDieAnimation();
+        await Task.Delay(500, cancellationTokenSource.Token);
         gameObject.SetActive(false);
         Time.timeScale = 1f;
         rb.linearVelocity = Vector2.zero; // Dừng mọi chuyển động khi chết
@@ -132,15 +138,20 @@ public abstract class BossBase : MonoBehaviour
     private async Task PlayDieAnimation()
     {
         animator.SetTrigger("Die");
-        
+
         // Chờ animation khởi động
         await Task.Delay(50);
-        
+
         // Lấy animation state hiện tại
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         float animationDuration = stateInfo.length / stateInfo.speed;
-        
+
         // Chờ animation kết thúc
         await Task.Delay((int)(animationDuration * 1000));
+    }
+    void OnDestroy()
+    {
+        cancellationTokenSource.Dispose();
+        cancellationTokenSource.Cancel();
     }
 }

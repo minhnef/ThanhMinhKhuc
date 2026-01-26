@@ -33,8 +33,9 @@ public class TeleportGate : MonoBehaviour
             // SetActivateGate(true);
             if (isActive && Input.GetKeyDown(KeyCode.E))
             {
+                SFXManager.instance?.PlaySFX(SFXType.TELEPORT);
                 AnimationManager.instance?.PlayerTeleAnim();
-                DOVirtual.DelayedCall(0.5f, () =>
+                DOVirtual.DelayedCall(1.0f, () =>
                 {
                     Debug.Log("Teleporting Player...");
                     Teleport(collision.gameObject);

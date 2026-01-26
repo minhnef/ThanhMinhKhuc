@@ -88,24 +88,6 @@ public class PlayerController : MonoBehaviour
             attackIndex = 0;
     }
 
-
-
-    // private void HandleComboAttack()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.J))
-    //     {
-    //         comboTimer = comboResetTime;
-
-    //         attackIndex++;
-    //         if (attackIndex > 2)
-    //             attackIndex = 1;
-
-    //         animator.SetInteger("AttackIndex", attackIndex);
-    //         animator.SetTrigger("Attack");
-
-    //         DoAttackDamage();
-    //     }
-    // }
     private void HandleComboAttack()
     {
         if (Input.GetKeyDown(KeyCode.J))
@@ -118,6 +100,7 @@ public class PlayerController : MonoBehaviour
             // Nếu đang trong đòn đánh và được phép nối combo
             else if (canCombo)
             {
+                canCombo=false;
                 StartAttack();
             }
         }
@@ -133,10 +116,12 @@ public class PlayerController : MonoBehaviour
 
         if (attackIndex > 3) attackIndex = 1;
 
+        if (attackIndex == 1) SFXManager.instance.PlaySFX(SFXType.SLASH1);
+        else if (attackIndex == 2) SFXManager.instance.PlaySFX(SFXType.SLASH2);
         animator.SetInteger("AttackIndex", attackIndex);
         animator.SetTrigger("Attack");
 
-        DoAttackDamage(); // Gây sát thương
+        // DoAttackDamage(); // Gây sát thương
     }
     private void DoAttackDamage()
     {
@@ -172,10 +157,7 @@ public class PlayerController : MonoBehaviour
         }
         DisableHitbox();
     }
-    public void SetCanCombo()
-    {
-        canCombo = true;
-    }
+
     public void EndAttack()
     {
         isAttacking = false;
@@ -192,7 +174,7 @@ public class PlayerController : MonoBehaviour
     }
     private void HandleMovement()
     {
-        if(isDashing)return;
+        if (isDashing||isAttacking) return;
         rb.linearVelocityX = movement * speed;
 
         if (movement < 0 && isFacingRight) Flip();
@@ -214,7 +196,7 @@ public class PlayerController : MonoBehaviour
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(isFacingRight ? dashSpeed : -dashSpeed, 0f);
-
+        SFXManager.instance.PlaySFX(SFXType.DASH);
         AnimationManager.instance?.PlayDashAnim();
         Debug.Log("dashing");
         yield return new WaitForSeconds(dashDuration);
@@ -314,7 +296,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("DeadZone"))
         {
             // Reset player position or handle death
-            transform.position = new Vector3(0, 0, 0); // Example respawn position
+            
             playerStatus.Die();
         }
     }
