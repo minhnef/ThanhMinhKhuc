@@ -15,8 +15,7 @@ public class ItemPickUp : MonoBehaviour
     {
         items.Clear();
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Item") && Input.GetKeyDown(KeyCode.E))
         {
@@ -29,6 +28,6 @@ public class ItemPickUp : MonoBehaviour
             }
         }
     }
-    
+
 }
 

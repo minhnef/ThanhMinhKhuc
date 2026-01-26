@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - DeadZone
   - PlayerInteract
+  - Item
   layers:
   - Default
   - TransparentFX
