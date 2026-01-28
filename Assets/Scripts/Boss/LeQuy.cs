@@ -26,7 +26,7 @@ public class LeQuy : BossBase
     {
         Debug.Log("LeQuy Attack Called");
         // Kiểm tra khoảng cách để quyết định chọn ngẫu nhiên hay chọn theo tầm đánh
-        float dist = Vector2.Distance(transform.position, playerTransform.position);
+        
         isAttacking = true; 
 
         // 1. Chọn loại đòn đánh (Bạn có thể dùng Random hoặc logic dist tùy ý)
@@ -80,7 +80,15 @@ public class LeQuy : BossBase
         // Tắt point ngay sau khi quét xong để tránh gây dame lặp lại
         attackPoint.gameObject.SetActive(false);
     }
+    public void PlayWhipSound()
+    {
+        SFXManager.instance.PlaySFX(SFXType.WHIP);
+    }
 
+    public void PlayHurtSound()
+    {
+        SFXManager.instance.PlaySFX(SFXType.LQ_HURT);
+    }
     private void OnDrawGizmosSelected()
     {
         // Vẽ Gizmos cho Polygon Collider để dễ căn chỉnh trong Scene

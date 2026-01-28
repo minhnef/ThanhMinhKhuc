@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M)) OpenSettingMenu();
         movement = Input.GetAxisRaw("Horizontal");
         StartDash();
         HandleMovement();
@@ -87,7 +88,12 @@ public class PlayerController : MonoBehaviour
         else
             attackIndex = 0;
     }
-
+    private void OpenSettingMenu()
+    {
+        var setting = Resources.Load<GameObject>("SettingCanvas");
+        Instantiate(setting);
+        Time.timeScale = 0f;
+    }
     private void HandleComboAttack()
     {
         if (Input.GetKeyDown(KeyCode.J))
@@ -100,7 +106,7 @@ public class PlayerController : MonoBehaviour
             // Nếu đang trong đòn đánh và được phép nối combo
             else if (canCombo)
             {
-                canCombo=false;
+                canCombo = false;
                 StartAttack();
             }
         }
@@ -109,7 +115,7 @@ public class PlayerController : MonoBehaviour
     private void StartAttack()
     {
         isAttacking = true;
-        canCombo = false; // Reset lại quyền nối combo cho đòn mới
+        canCombo = false;
 
         comboTimer = comboResetTime;
         attackIndex++;
@@ -121,7 +127,6 @@ public class PlayerController : MonoBehaviour
         animator.SetInteger("AttackIndex", attackIndex);
         animator.SetTrigger("Attack");
 
-        // DoAttackDamage(); // Gây sát thương
     }
     private void DoAttackDamage()
     {
@@ -174,7 +179,7 @@ public class PlayerController : MonoBehaviour
     }
     private void HandleMovement()
     {
-        if (isDashing||isAttacking) return;
+        if (isDashing || isAttacking) return;
         rb.linearVelocityX = movement * speed;
 
         if (movement < 0 && isFacingRight) Flip();
@@ -192,7 +197,7 @@ public class PlayerController : MonoBehaviour
         originalLayer = gameObject.layer;
         gameObject.layer = LayerMask.NameToLayer("PlayerDash");
 
-        // 2. Logic vật lý (như đã hướng dẫn trước đó)
+        // 2. Logic vật lý 
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(isFacingRight ? dashSpeed : -dashSpeed, 0f);
@@ -212,7 +217,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
-    // Gọi hàm này khi nhấn nút Dash
     public void StartDash()
     {
         if (canDash && Input.GetKeyDown(KeyCode.L)) StartCoroutine(DashCoroutine());
@@ -296,7 +300,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("DeadZone"))
         {
             // Reset player position or handle death
-            
+
             playerStatus.Die();
         }
     }

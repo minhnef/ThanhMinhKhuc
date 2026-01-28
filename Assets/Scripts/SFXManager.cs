@@ -152,4 +152,7 @@ public enum SFXType
     TELEPORT,
     DASH,
 
+    WHIP,
+    LQ_HURT,
+
 }

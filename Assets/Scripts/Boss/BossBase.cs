@@ -30,6 +30,7 @@ public abstract class BossBase : MonoBehaviour
     [SerializeField] protected LayerMask playerMask;
     protected Rigidbody2D rb;
     [SerializeField] protected bool isAttacking;
+    [SerializeField] private GameObject mirrorPart;
     protected bool isDead;
 
     public RoomTrigger bossRoomTrigger;
@@ -42,6 +43,7 @@ public abstract class BossBase : MonoBehaviour
         if (rb == null) rb = GetComponent<Rigidbody2D>();
         if (playerTransform == null) playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         if (animator == null) animator = GetComponent<Animator>();
+        mirrorPart.SetActive(false);
     }
 
     protected virtual void Update()
@@ -134,6 +136,7 @@ public abstract class BossBase : MonoBehaviour
         rb.linearVelocity = Vector2.zero; // Dừng mọi chuyển động khi chết
         enabled = false; // Tắt script Boss
         bossRoomTrigger.CheckRoomCleared();
+        mirrorPart.SetActive(true);
     }
     private async Task PlayDieAnimation()
     {
