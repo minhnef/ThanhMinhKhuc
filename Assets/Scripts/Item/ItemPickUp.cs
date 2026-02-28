@@ -7,14 +7,18 @@ using UnityEngine;
 public class ItemPickUp : MonoBehaviour
 {
     public static ItemPickUp instance;
-    [SerializeField] private List<Item> items = new List<Item>(); // Khởi tạo list tránh null
+
+    [Header("Inventory Data")]
+    [SerializeField] private List<Item> items = new List<Item>(); 
     [SerializeField] private List<GameObject> mirrorParts = new List<GameObject>();
-    
+
+    [Header("Current Interaction")]
     public Item currentItem;
     public GameObject currentMirrorPart;
 
     private void Awake()
     {
+        // Hệ thống Singleton chuẩn để giữ dữ liệu qua các Scene
         if (instance == null)
         {
             instance = this;
@@ -23,7 +27,38 @@ public class ItemPickUp : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            return; // Dừng thực thi logic phía dưới
+            return; 
+        }
+    }
+
+    private void Update()
+    {
+
+        HandleInteractions();
+    }
+
+    private void HandleInteractions()
+    {
+        if (!Input.GetKeyDown(KeyCode.E)) return;
+
+        // 1. Xử lý nhặt Item thường
+        if (currentItem != null)
+        {
+            items.Add(currentItem);
+
+            GameObject target = currentItem.gameObject;
+            currentItem = null; 
+            target.SetActive(false);
+        }
+
+        // 2. Xử lý nhặt Mảnh gương (có hiệu ứng Fade)
+        if (currentMirrorPart != null)
+        {
+            GameObject partToFade = currentMirrorPart;
+            mirrorParts.Add(partToFade);
+            currentMirrorPart = null; 
+
+            StartCoroutine(IEFadeMirror(partToFade));
         }
     }
 
@@ -32,47 +67,25 @@ public class ItemPickUp : MonoBehaviour
         if (collision.CompareTag("Item"))
         {
             currentItem = collision.GetComponent<Item>();
+            Debug.Log("Đang đứng gần Item: " + currentItem.ItemName);
         }
         else if (collision.CompareTag("MirrorPart"))
         {
             currentMirrorPart = collision.gameObject;
+            Debug.Log("Đang đứng gần Mảnh gương");
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // Kiểm tra xem object đi ra có đúng là object đang lưu không
+        // Chỉ xóa currentItem nếu chính cái đó đi ra khỏi vùng Trigger
         if (collision.CompareTag("Item") && currentItem != null && collision.gameObject == currentItem.gameObject)
         {
             currentItem = null;
         }
-        else if (collision.CompareTag("MirrorPart") && collision.gameObject == currentMirrorPart)
+        else if (collision.CompareTag("MirrorPart") && currentMirrorPart != null && collision.gameObject == currentMirrorPart)
         {
             currentMirrorPart = null;
-        }
-    }
-
-    private void Update()
-    {
-        // Sử dụng phím E để nhặt Item
-        if (currentItem != null && Input.GetKeyDown(KeyCode.E))
-        {
-            items.Add(currentItem);
-            Debug.Log("Picked up item: " + currentItem.ItemName);
-            
-            GameObject itemObj = currentItem.gameObject;
-            currentItem = null; // Xóa tham chiếu ngay lập tức để tránh nhặt 2 lần
-            itemObj.SetActive(false);
-        }
-
-        // Sử dụng phím E để nhặt MirrorPart
-        if (currentMirrorPart != null && Input.GetKeyDown(KeyCode.E))
-        {
-            GameObject partToFade = currentMirrorPart;
-            mirrorParts.Add(partToFade);
-            currentMirrorPart = null; // Khóa ngay lập tức
-            
-            StartCoroutine(IEFadeMirror(partToFade));
         }
     }
 
@@ -80,18 +93,20 @@ public class ItemPickUp : MonoBehaviour
     {
         if (target == null) yield break;
 
-        
-            target.GetComponent<SpriteRenderer>().DOFade(0f, 1.5f); 
-        
+        // Lấy SpriteRenderer để làm mờ
+        if (target.TryGetComponent<SpriteRenderer>(out SpriteRenderer sr))
+        {
+            sr.DOFade(0f, 1.5f);
+        }
 
         yield return new WaitForSeconds(1.5f);
 
         if (target != null)
         {
             target.SetActive(false);
+            Debug.Log("<color=blue>Mảnh gương đã biến mất hoàn toàn</color>");
         }
     }
 
-    // Hàm public để các Script khác lấy danh sách item (ví dụ UI Inventory)
     public List<Item> GetItems() => items;
 }

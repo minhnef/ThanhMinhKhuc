@@ -24,12 +24,9 @@ public class LeQuy : BossBase
 
     protected override void Attack()
     {
-        Debug.Log("LeQuy Attack Called");
-        // Kiểm tra khoảng cách để quyết định chọn ngẫu nhiên hay chọn theo tầm đánh
-        
+        Debug.Log("LeQuy Attack Called");    
         isAttacking = true; 
-
-        // 1. Chọn loại đòn đánh (Bạn có thể dùng Random hoặc logic dist tùy ý)
+        // 1. Chọn loại đòn đánh
         int attackType = Random.Range(1, 4); 
 
         // 2. Chạy Animation
@@ -37,7 +34,6 @@ public class LeQuy : BossBase
         animator.SetTrigger("Attack");
 
         // 3. Xử lý gây sát thương bằng Invoke dựa trên thời điểm vung chiêu
-        // Bạn nên khớp các giây này với Animation của Lệ Quỷ
         switch (attackType)
         {
             case 1: Invoke(nameof(HandleAttack1), 0.6f); break;
@@ -45,7 +41,6 @@ public class LeQuy : BossBase
             case 3: Invoke(nameof(HandleAttack3), 0.4f); break;
         }
 
-        DOVirtual.DelayedCall(1.5f, () => EndAttack());
         Debug.Log("LeQuy Attack Executed");
     }
 
@@ -61,7 +56,7 @@ public class LeQuy : BossBase
         PolygonCollider2D poly = attackPoint.GetComponent<PolygonCollider2D>();
         if (poly == null) return;
 
-        // Bật point lên để đảm bảo va chạm chính xác (nếu cần)
+        // Bật point lên để đảm bảo va chạm chính xác
         attackPoint.gameObject.SetActive(true);
 
         // Quét va chạm bằng Polygon

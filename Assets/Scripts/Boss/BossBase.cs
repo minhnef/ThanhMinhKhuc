@@ -14,11 +14,7 @@ public abstract class BossBase : MonoBehaviour
     public float currentHealthValue => currentHealth;
 
     [SerializeField] protected float detectionRange;
-    [SerializeField] protected float attackRange1 = 0.5f;
-    [SerializeField] protected float attackRange2 = 0.3f;
-    [SerializeField] protected float attackRange3 = 2f;
     [SerializeField] protected float moveSpeed;
-    // [SerializeField] protected float attackDamage;
     [SerializeField] protected float attackCooldown;
     private float lastAttackTime;
     [Header("References")]
@@ -52,12 +48,6 @@ public abstract class BossBase : MonoBehaviour
 
         float distance = Vector2.Distance(transform.position, playerTransform.position);
 
-        // if (distance > detectionRange)
-        // {
-        //     Idle();
-        //     return;
-        // }
-
         if (distance > detectionRange)
         {
             MoveTowardsPlayer();
@@ -73,26 +63,12 @@ public abstract class BossBase : MonoBehaviour
     }
 
 
-    private void Idle()
-    {
-        // animator.SetBool("isMoving", false);
-    }
-
     private void MoveTowardsPlayer()
     {
-        // animator.SetBool("isMoving", true);
         Vector2 direction = (playerTransform.position - transform.position).normalized;
 
         rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
         Flip();
-    }
-
-    protected abstract void Attack();
-
-    public virtual void EndAttack()
-    {
-        isAttacking = false;
-        lastAttackTime = Time.time;
     }
     protected void Flip()
     {
@@ -101,6 +77,14 @@ public abstract class BossBase : MonoBehaviour
         else
             transform.eulerAngles = Vector3.zero;
     }
+    protected abstract void Attack();
+
+    public virtual void EndAttack()
+    {
+        isAttacking = false;
+        lastAttackTime = Time.time;
+    }
+
     public virtual void TakeDamage(float damage)
     {
         EndAttack();
@@ -133,25 +117,21 @@ public abstract class BossBase : MonoBehaviour
         await Task.Delay(500, cancellationTokenSource.Token);
         gameObject.SetActive(false);
         Time.timeScale = 1f;
-        rb.linearVelocity = Vector2.zero; // Dừng mọi chuyển động khi chết
-        enabled = false; // Tắt script Boss
+        rb.linearVelocity = Vector2.zero; 
+        enabled = false; 
         bossRoomTrigger.CheckRoomCleared();
         mirrorPart.SetActive(true);
     }
     private async Task PlayDieAnimation()
     {
         animator.SetTrigger("Die");
-
-        // Chờ animation khởi động
         await Task.Delay(50);
-
-        // Lấy animation state hiện tại
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         float animationDuration = stateInfo.length / stateInfo.speed;
-
-        // Chờ animation kết thúc
         await Task.Delay((int)(animationDuration * 1000));
     }
+
+    
     void OnDestroy()
     {
         cancellationTokenSource.Dispose();

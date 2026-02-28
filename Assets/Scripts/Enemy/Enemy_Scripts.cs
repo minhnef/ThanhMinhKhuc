@@ -119,6 +119,7 @@ public class Enemy : MonoBehaviour
     {
         if (maxHealth <= 0) return;
         HitStop.Instance?.TriggerHitStop(0.06f);
+        animator.SetTrigger("hit");
         Knockback(5f, (Vector2.right * -direction).normalized);
         maxHealth -= damage;
         if (maxHealth <= 0)
