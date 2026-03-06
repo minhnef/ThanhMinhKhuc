@@ -7,7 +7,12 @@ using UnityEngine;
 public class BossRoomEntryDoor : MonoBehaviour
 {
     [SerializeField] private List<Item> requiredItems;
+    [SerializeField] private GameObject boss;
 
+    void Start()
+    {
+        boss.SetActive(false);
+    }
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")&&Input.GetKeyDown(KeyCode.E))
@@ -16,6 +21,7 @@ public class BossRoomEntryDoor : MonoBehaviour
             if (playerItems != null && HasRequiredItems(playerItems))
             {
                 OpenDoor();
+                boss.SetActive(true);
             }
         }
     }
@@ -25,6 +31,7 @@ public class BossRoomEntryDoor : MonoBehaviour
         {
             if (!playerItems.Contains(requiredItem))
             {
+                NotitManage.Instance.ShowNotification("Còn thiếu vật phẩm cần thiết!");
                 return false;
             }
         }

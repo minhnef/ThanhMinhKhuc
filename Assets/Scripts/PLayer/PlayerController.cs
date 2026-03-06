@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; private set; }
     [Header("Player Settings")]
     [SerializeField] private float speed = 7f;
     [SerializeField] private float jumpForce = 12f;
@@ -54,7 +55,10 @@ public class PlayerController : MonoBehaviour
     public bool isInvincible; // Kiểm tra biến này trong hàm TakeDamage của Player
     private bool isAttacking;
     private bool canCombo;
-
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -274,7 +278,29 @@ public class PlayerController : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
     }
-
+    public void PowerUp(BuffItem buffItem)
+    {
+        if (buffItem.healthBuffAmount > 0)
+        {
+             PlayerStatus.Instance.currentHealth += buffItem.healthBuffAmount;
+            if (PlayerStatus.Instance.currentHealth > PlayerStatus.Instance.maxHealth)
+            {
+                PlayerStatus.Instance.maxHealth = PlayerStatus.Instance.currentHealth;
+            }
+        }
+        if (buffItem.damageBuffAmount > 0)
+        {
+            damage += buffItem.damageBuffAmount;
+        }
+        if (buffItem.speedBuffAmount > 0)
+        {
+            speed += buffItem.speedBuffAmount;
+        }
+        if (buffItem.jumpBuffAmount > 0)
+        {
+            jumpForce += buffItem.jumpBuffAmount;
+        }
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {

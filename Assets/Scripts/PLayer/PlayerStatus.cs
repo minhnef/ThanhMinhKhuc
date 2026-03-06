@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
 {
+    public static PlayerStatus Instance { get; private set; }
     public int maxHealth = 30;
     public int currentHealth;
     public PlayerController playerController;
@@ -13,6 +15,13 @@ public class PlayerStatus : MonoBehaviour
     private List<CheckPoint> checkpoints = new List<CheckPoint>();
     private Vector3 startPos;
 
+    [Header("Health_UI")]
+    public Slider healthSlider;
+
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         checkpoints.Clear();
@@ -24,7 +33,10 @@ public class PlayerStatus : MonoBehaviour
             roomTriggers = FindObjectsOfType<RoomTrigger>();
         }
     }
-
+    void Update()
+    {
+        healthSlider.value = currentHealth/(float)maxHealth;
+    }
     public void Respawn()
     {
         currentHealth = maxHealth;
@@ -51,8 +63,6 @@ public class PlayerStatus : MonoBehaviour
                 }
             }
         }
-
-
     }
 
     public void RegisterCheckpoint(CheckPoint checkpoint)
@@ -86,13 +96,13 @@ public class PlayerStatus : MonoBehaviour
         CheckPoint nearestCheckpoint = checkpoints.FindLast(cp => cp != null);
         if (nearestCheckpoint != null)
         {
-            playerController.transform.position = nearestCheckpoint.transform.position;
+            transform.position = nearestCheckpoint.transform.position;
             Respawn();
         }
         else
         {
             // If no checkpoint is found, respawn at the origin or a default position
-            playerController.transform.position = startPos;
+            transform.position = startPos;
             Respawn();
         }
     }

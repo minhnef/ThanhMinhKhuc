@@ -13,8 +13,8 @@ public class ItemPickUp : MonoBehaviour
     [SerializeField] private List<GameObject> mirrorParts = new List<GameObject>();
 
     [Header("Current Interaction")]
-    public Item currentItem;
-    public GameObject currentMirrorPart;
+    public Item currentItem=null;
+    public GameObject currentMirrorPart = null;
 
     private void Awake()
     {
@@ -33,7 +33,6 @@ public class ItemPickUp : MonoBehaviour
 
     private void Update()
     {
-
         HandleInteractions();
     }
 
@@ -44,6 +43,7 @@ public class ItemPickUp : MonoBehaviour
         // 1. Xử lý nhặt Item thường
         if (currentItem != null)
         {
+            NotitManage.Instance.ShowNotification("Đã nhặt: " + currentItem.ItemName);
             items.Add(currentItem);
 
             GameObject target = currentItem.gameObject;
@@ -57,7 +57,7 @@ public class ItemPickUp : MonoBehaviour
             GameObject partToFade = currentMirrorPart;
             mirrorParts.Add(partToFade);
             currentMirrorPart = null; 
-
+            NotitManage.Instance.ShowNotification("Đã nhặt mảnh gương!");
             StartCoroutine(IEFadeMirror(partToFade));
         }
     }
@@ -73,6 +73,15 @@ public class ItemPickUp : MonoBehaviour
         {
             currentMirrorPart = collision.gameObject;
             Debug.Log("Đang đứng gần Mảnh gương");
+        }else if (collision.CompareTag("BuffItem"))
+        {
+            BuffItem buffItem = collision.GetComponent<BuffItem>();
+            if (buffItem != null)
+            {
+                PlayerController.Instance.PowerUp(buffItem);
+                NotitManage.Instance.ShowNotification($"Chỉ số đã được tăng! HP +{buffItem.healthBuffAmount}, Damage +{buffItem.damageBuffAmount}, Speed +{buffItem.speedBuffAmount}, Jump +{buffItem.jumpBuffAmount}");
+                Destroy(buffItem.gameObject);
+            }
         }
     }
 

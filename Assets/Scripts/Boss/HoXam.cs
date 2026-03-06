@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class HoXam : BossBase
 {
+    public float leapForce = 50f;
     [SerializeField] private PlayerStatus playerStatus;
 
     // Tạo bộ lọc và danh sách để tối ưu bộ nhớ, tránh tạo rác (GC)
@@ -17,14 +18,17 @@ public class HoXam : BossBase
         playerFilter.SetLayerMask(playerMask);
         playerFilter.useLayerMask = true;
         playerFilter.useTriggers = true; // Quét cả nếu Player có trigger
+        playerStatus = playerTransform.GetComponent<PlayerStatus>();
     }
-
+    // private void Update()
+    // {
+    //      base.Update();
+    // }
     protected override void Attack()
     {
-        float dist = Vector2.Distance(transform.position, playerTransform.position);
         isAttacking = true;
-        int attackType = Random.Range(1, 4);
-        
+        int attackType = Random.Range(1,4);
+
 
         animator.SetInteger("AttackType", attackType);
         animator.SetTrigger("Attack");
@@ -33,15 +37,17 @@ public class HoXam : BossBase
         switch (attackType)
         {
             case 1:
-                Invoke(nameof(LeapLogic), 0.4f);
+
                 SFXManager.instance.PlaySFX(SFXType.TIGER_SCRAP);
                 break;
             case 2:
-                Invoke(nameof(ScratchDamage), 0.5f);
-                SFXManager.instance.PlaySFX(SFXType.TIGER_SCRAP);
+                {
+                    LeapLogic();
+                    SFXManager.instance.PlaySFX(SFXType.TIGER_SCRAP);
+                }
+
                 break;
             case 3:
-                Invoke(nameof(RoarDamage), 0.6f);
                 SFXManager.instance.PlaySFX(SFXType.TIGER_ROAR);
                 break;
         }
@@ -70,19 +76,26 @@ public class HoXam : BossBase
                 AnimationManager.instance?.PlayerHurtAnim();
                 playerStatus.TakeDamage(damage);
                 Debug.Log($"Hit Player with {attackPoint.name}");
-                break; 
+                break;
             }
         }
     }
 
     public void LeapLogic()
     {
-        float leapForce = 50f;
-        Vector2 direction = (playerTransform.position - transform.position).normalized;
-        rb.AddForce(new Vector2(direction.x * leapForce, 2f), ForceMode2D.Impulse);
+        Debug.Log("Tiger Leap!");
+        if (playerTransform == null) return;
 
+        float dashDir = playerTransform.position.x > transform.position.x ? 1 : -1;
+
+
+        rb.AddForce(new Vector2(dashDir * leapForce, 5f), ForceMode2D.Impulse);
+
+
+    }
+    public void LeapDamage()
+    {
         CheckPolygonDamage(attackPoint1, 10);
-
     }
 
     public void ScratchDamage()
@@ -120,21 +133,6 @@ public class HoXam : BossBase
             Vector3 p2 = point.TransformPoint(points[(i + 1) % points.Length]);
             Gizmos.DrawLine(p1, p2);
         }
-        // if (attackPoint1 != null)
-        // {
-        //     Gizmos.color = Color.green;
-        //     Gizmos.DrawWireSphere(attackPoint1.position, attackRange1);
-        // }
-        // if (attackPoint2 != null)
-        // {
-        //     Gizmos.color = Color.red;
-        //     Gizmos.DrawWireSphere(attackPoint2.position, attackRange2);
-        // }
-        // if (attackPoint3 != null)
-        // {
-        //     Gizmos.color = Color.blue;
-        //     Gizmos.DrawWireSphere(attackPoint3.position, attackRange3);
-        // }
     }
 
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +23,7 @@ public class DialogueUI : MonoBehaviour
     private Coroutine typingCoroutine;
 
     public bool isOpen => dialoguePanel.activeSelf;
+    public DialogueTrigger currentNPC = null;
 
     void Start()
     {
@@ -30,6 +32,7 @@ public class DialogueUI : MonoBehaviour
 
     public void StartDialogue(DialogueTrigger npcDialogue)
     {
+        currentNPC = npcDialogue;
         npcImage.sprite = npcDialogue.avatar;
         npcNameText.text = npcDialogue.npcName;
         lines = npcDialogue.dialogues;
@@ -40,7 +43,7 @@ public class DialogueUI : MonoBehaviour
 
     private void StartTyping(string line)
     {
-        Debug.Log(line);
+        // Debug.Log(line);
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
@@ -85,5 +88,8 @@ public class DialogueUI : MonoBehaviour
     private void CloseDialogue()
     {
         dialoguePanel.SetActive(false);
+        
+        currentNPC.gameObject.SetActive(false);
+        currentNPC = null;
     }
 }

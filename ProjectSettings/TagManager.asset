@@ -11,6 +11,7 @@ TagManager:
   - PlayerInteract
   - Item
   - MirrorPart
+  - BuffItem
   layers:
   - Default
   - TransparentFX

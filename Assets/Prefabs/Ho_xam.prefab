@@ -210,6 +210,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8100929696842880324
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -255,6 +256,7 @@ SpriteRenderer:
   m_SortingLayerID: -1391032603
   m_SortingLayer: 1
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -3582916166963785052, guid: 1d67def6e66b3584f96dac88f790102b, type: 3}
   m_Color: {r: 0.78113204, g: 0.78113204, b: 0.78113204, a: 1}
   m_FlipX: 0
@@ -264,7 +266,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &5877631290572845366
 Rigidbody2D:
@@ -329,13 +330,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoXam
   maxHealth: 100
   currentHealth: 0
-  armor: 0
-  detectionRange: 50
-  attackRange1: 6
-  attackRange2: 20
-  attackRange3: 17.4
+  armor: 5
+  detectionRange: 40
   moveSpeed: 5
-  attackCooldown: 1
+  attackCooldown: 1.2
   animator: {fileID: 1831797022439796339}
   playerTransform: {fileID: 0}
   attackPoint1: {fileID: 3746818513695217702}
@@ -344,7 +342,11 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 64
+  rb: {fileID: 5877631290572845366}
+  isAttacking: 0
+  mirrorPart: {fileID: 0}
   bossRoomTrigger: {fileID: 0}
+  leapForce: 50
   playerStatus: {fileID: 0}
 --- !u!61 &6019843042221587630
 BoxCollider2D:
@@ -550,6 +552,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6479323281504032968
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -595,14 +598,14 @@ SpriteRenderer:
   m_SortingLayerID: -1391032603
   m_SortingLayer: 1
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.0625, y: 1}
+  m_Size: {x: 2.0625, y: 1.5625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0

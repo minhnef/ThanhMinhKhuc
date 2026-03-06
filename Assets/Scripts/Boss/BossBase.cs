@@ -16,7 +16,7 @@ public abstract class BossBase : MonoBehaviour
     [SerializeField] protected float detectionRange;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float attackCooldown;
-    private float lastAttackTime;
+    private DateTime lastAttackTime;
     [Header("References")]
     [SerializeField] protected Animator animator;
     [SerializeField] protected Transform playerTransform;
@@ -24,9 +24,9 @@ public abstract class BossBase : MonoBehaviour
     [SerializeField] protected Transform attackPoint2;
     [SerializeField] protected Transform attackPoint3;
     [SerializeField] protected LayerMask playerMask;
-    protected Rigidbody2D rb;
+    [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected bool isAttacking;
-    [SerializeField] private GameObject mirrorPart;
+    [SerializeField] private GameObject mirrorPart, winEffect;
     protected bool isDead;
 
     public RoomTrigger bossRoomTrigger;
@@ -37,13 +37,14 @@ public abstract class BossBase : MonoBehaviour
         cancellationTokenSource = new CancellationTokenSource();
         currentHealth = maxHealth;
         if (rb == null) rb = GetComponent<Rigidbody2D>();
-        if (playerTransform == null) playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        if (playerTransform == null) playerTransform = FindAnyObjectByType<PlayerController>().transform;
         if (animator == null) animator = GetComponent<Animator>();
         mirrorPart.SetActive(false);
     }
 
     protected virtual void Update()
     {
+        Flip();
         if (isDead || playerTransform == null) return;
 
         float distance = Vector2.Distance(transform.position, playerTransform.position);
@@ -54,10 +55,10 @@ public abstract class BossBase : MonoBehaviour
         }
         else
         {
-            if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
+            if (!isAttacking && (DateTime.Now - lastAttackTime).TotalSeconds >= attackCooldown)
             {
                 Attack();
-                MoveTowardsPlayer();
+
             }
         }
     }
@@ -65,10 +66,11 @@ public abstract class BossBase : MonoBehaviour
 
     private void MoveTowardsPlayer()
     {
+        if (isAttacking) return;
         Vector2 direction = (playerTransform.position - transform.position).normalized;
 
         rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
-        Flip();
+        // Flip();
     }
     protected void Flip()
     {
@@ -82,12 +84,12 @@ public abstract class BossBase : MonoBehaviour
     public virtual void EndAttack()
     {
         isAttacking = false;
-        lastAttackTime = Time.time;
+        lastAttackTime = DateTime.Now;
     }
 
     public virtual void TakeDamage(float damage)
     {
-        EndAttack();
+        // EndAttack();
         if (isDead) return;
         float effectiveDamage = Mathf.Max(damage - armor, 1);
         currentHealth -= effectiveDamage;
@@ -117,11 +119,23 @@ public abstract class BossBase : MonoBehaviour
         await Task.Delay(500, cancellationTokenSource.Token);
         gameObject.SetActive(false);
         Time.timeScale = 1f;
-        rb.linearVelocity = Vector2.zero; 
-        enabled = false; 
+        rb.linearVelocity = Vector2.zero;
+        enabled = false;
         bossRoomTrigger.CheckRoomCleared();
         mirrorPart.SetActive(true);
+        if(winEffect != null)
+        {
+            winEffect.SetActive(true);
+            Invoke(nameof(HideWinEffect), 5000);
+            
+        }
     }
+
+    private void HideWinEffect()
+    {
+        winEffect.SetActive(false);
+    }
+
     private async Task PlayDieAnimation()
     {
         animator.SetTrigger("Die");
@@ -131,7 +145,7 @@ public abstract class BossBase : MonoBehaviour
         await Task.Delay((int)(animationDuration * 1000));
     }
 
-    
+
     void OnDestroy()
     {
         cancellationTokenSource.Dispose();

@@ -105,10 +105,15 @@ public class Enemy : MonoBehaviour
     {
         animator.SetTrigger("Attack");
 
+        
+    }
+    public void Dodamage()
+    {
         Collider2D col = Physics2D.OverlapCircle(attackPoint.position, attackRadius, playerMask);
         if (col != null && col.TryGetComponent<PlayerStatus>(out var playerStatus))
         {
             playerStatus.TakeDamage(1);
+            Debug.Log("Player hit!");
         }
     }
 
