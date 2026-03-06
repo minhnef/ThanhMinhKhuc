@@ -587427,6 +587427,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1324060382993538843, guid: bbb2dbb6e4fe7bb46a23ee7c0c4f8b62, type: 3}
   m_PrefabInstance: {fileID: 1334030399}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1531992245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8779575352157074049, guid: 858437a950265994c96b22da5bf221a7, type: 3}
+  m_PrefabInstance: {fileID: 642057538437643151}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1548391880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614919,6 +614930,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 305105767091106469, guid: 858437a950265994c96b22da5bf221a7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 305105767091106469, guid: 858437a950265994c96b22da5bf221a7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 305105767091106469, guid: 858437a950265994c96b22da5bf221a7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 507804991366989081, guid: 858437a950265994c96b22da5bf221a7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -615026,6 +615049,14 @@ PrefabInstance:
     - target: {fileID: 4855505163058782472, guid: 858437a950265994c96b22da5bf221a7, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779575352157074049, guid: 858437a950265994c96b22da5bf221a7, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779575352157074049, guid: 858437a950265994c96b22da5bf221a7, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -615454,6 +615485,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6214456602768569845, guid: 08814ef51c69a5448a7de3398258342f, type: 3}
+      propertyPath: healthTxt
+      value: 
+      objectReference: {fileID: 1531992245}
     - target: {fileID: 6214456602768569845, guid: 08814ef51c69a5448a7de3398258342f, type: 3}
       propertyPath: healthSlider
       value: 

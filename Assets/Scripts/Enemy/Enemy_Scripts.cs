@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     [Header("Combat")]
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRadius = 1f;
+    [SerializeField]private int attackDamage = 1;
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private float maxHealth = 5f;
 
@@ -112,7 +113,7 @@ public class Enemy : MonoBehaviour
         Collider2D col = Physics2D.OverlapCircle(attackPoint.position, attackRadius, playerMask);
         if (col != null && col.TryGetComponent<PlayerStatus>(out var playerStatus))
         {
-            playerStatus.TakeDamage(1);
+            playerStatus.TakeDamage(attackDamage);
             Debug.Log("Player hit!");
         }
     }

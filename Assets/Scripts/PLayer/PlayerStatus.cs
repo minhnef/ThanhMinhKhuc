@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,7 @@ public class PlayerStatus : MonoBehaviour
 
     [Header("Health_UI")]
     public Slider healthSlider;
+    public TextMeshProUGUI healthTxt;
 
     void Awake()
     {
@@ -32,11 +34,9 @@ public class PlayerStatus : MonoBehaviour
         {
             roomTriggers = FindObjectsOfType<RoomTrigger>();
         }
+        UpdateHealthUI();
     }
-    void Update()
-    {
-        healthSlider.value = currentHealth/(float)maxHealth;
-    }
+
     public void Respawn()
     {
         currentHealth = maxHealth;
@@ -74,7 +74,7 @@ public class PlayerStatus : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        if(playerController.isInvincible) return;
+        if (playerController.isInvincible) return;
         AnimationManager.instance?.PlayerHurtAnim();
         currentHealth -= damage;
         if (currentHealth <= 0)
@@ -82,11 +82,17 @@ public class PlayerStatus : MonoBehaviour
             Die();
         }
         playerController.EndAttack();
+        UpdateHealthUI();
+    }
+
+    public void UpdateHealthUI()
+    {
+        healthSlider.value = currentHealth / (float)maxHealth;
+        healthTxt.text = $"{currentHealth} / {maxHealth}";
     }
 
     public void Die()
     {
-        // Handle player death (e.g., respawn, game over, etc.)
         Debug.Log("Player Died");
         RespawnToNearestCheckpoint();
     }

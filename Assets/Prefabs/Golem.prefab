@@ -121,7 +121,8 @@ MonoBehaviour:
   chaseStopDistance: 2.5
   chaseSpeed: 5
   attackPoint: {fileID: 1348384449129310261}
-  attackRadius: 1
+  attackRadius: 2
+  attackDamage: 8
   playerMask:
     serializedVersion: 2
     m_Bits: 64

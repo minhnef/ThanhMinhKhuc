@@ -81,6 +81,7 @@ public class ItemPickUp : MonoBehaviour
                 PlayerController.Instance.PowerUp(buffItem);
                 NotitManage.Instance.ShowNotification($"Chỉ số đã được tăng! HP +{buffItem.healthBuffAmount}, Damage +{buffItem.damageBuffAmount}, Speed +{buffItem.speedBuffAmount}, Jump +{buffItem.jumpBuffAmount}");
                 Destroy(buffItem.gameObject);
+                PlayerStatus.Instance.UpdateHealthUI();
             }
         }
     }
