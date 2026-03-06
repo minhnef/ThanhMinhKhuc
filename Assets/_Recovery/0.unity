@@ -614135,26 +614135,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5773380622321346731, guid: 858437a950265994c96b22da5bf221a7, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 5527661196443274707, guid: 57aecbf1a03dcf840b84f3428984e0ad, type: 3}
-    - target: {fileID: 7010120306412096757, guid: 858437a950265994c96b22da5bf221a7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7010120306412096757, guid: 858437a950265994c96b22da5bf221a7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 210
-      objectReference: {fileID: 0}
-    - target: {fileID: 8179734723276335732, guid: 858437a950265994c96b22da5bf221a7, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 8179734723276335732, guid: 858437a950265994c96b22da5bf221a7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -614808,88 +614788,6 @@ PrefabInstance:
       propertyPath: avatar
       value: 
       objectReference: {fileID: -8922328891513336043, guid: 57aecbf1a03dcf840b84f3428984e0ad, type: 3}
-    - target: {fileID: 2975389717457285121, guid: 8f4ad28b8a3f7e44eb8f800243bc5837, type: 3}
-      propertyPath: npcName
-      value: "\xD4ng l\xE3o b\xED \u1EA9n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2975389717457285121, guid: 8f4ad28b8a3f7e44eb8f800243bc5837, type: 3}
-      propertyPath: dialogues.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2975389717457285121, guid: 8f4ad28b8a3f7e44eb8f800243bc5837, type: 3}
-      propertyPath: 'dialogues.Array.data[0]'
-      value: "Ch\xE0o m\u1EEBng ch\xE1u \u0111\u1EBFn v\u1EDBi Minh Gi\u1EDBi...
-        n\u01A1i m\xE0 th\u1EDDi gian kh\xF4ng tr\xF4i b\u1EB1ng kim \u0111\u1ED3ng
-        h\u1ED3, m\xE0 b\u1EB1ng nh\u1EEFng h\u01A1i th\u1EDF d\xE0i o\xE1n h\u1EADn."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2975389717457285121, guid: 8f4ad28b8a3f7e44eb8f800243bc5837, type: 3}
-      propertyPath: 'dialogues.Array.data[1]'
-      value: "Ch\u1EDB c\xF3 l\u1EA7m t\u01B0\u1EDFng \u0111\xE2y ch\u1EC9 l\xE0
-        n\u1EA5m m\u1ED3 c\u1EE7a k\u1EBB ch\u1EBFt. Ch\u1ED1n n\xE0y l\xE0 c\xE1i
-        t\xFAi \u0111\u1EF1ng nh\u1EEFng g\xEC tr\u1EA7n gian ch\u1ED1i b\u1ECF:
-        m\u1ED9t l\u1EDDi th\u1EC1 b\u1ECB l\xE3ng qu\xEAn, m\u1ED9t m\u1EA3nh g\u01B0\u01A1ng
-        k\xFD \u1EE9c v\u1EE1 tan, hay m\u1ED9t b\u1EA3n nh\u1EA1c ch\u01B0a k\u1ECBp
-        d\u1EE9t ti\u1EBFng..."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2975389717457285121, guid: 8f4ad28b8a3f7e44eb8f800243bc5837, type: 3}
-      propertyPath: 'dialogues.Array.data[2]'
-      value: "Nh\xECn l\xE0n s\u01B0\u01A1ng m\xF9 v\xE2y quanh m\xECnh \u0111i.
-        \u0110\xF3 kh\xF4ng ph\u1EA3i h\u01A1i l\u1EA1nh c\u1EE7a n\u01B0\u1EDBc,
-        m\xE0 l\xE0 b\u1EE5i m\xF9 c\u1EE7a nh\u1EEFng linh h\u1ED3n \u0111\xE3 tan
-        bi\u1EBFn. \u1EDE \u0111\xE2y, th\u1EF1c v\xE0 \u1EA3o m\u1ECFng manh nh\u01B0
-        t\u1EDD gi\u1EA5y b\u1EA3n. Nh\u1EEFng g\xEC ch\xE1u th\u1EA5y l\xE0 k\xFD
-        \u1EE9c, nh\u01B0ng nh\u1EEFng g\xEC ch\u1EA1m v\xE0o ch\xE1u... l\u1EA1i
-        l\xE0 n\u1ED7i \u0111au th\u1EF1c s\u1EF1."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2975389717457285121, guid: 8f4ad28b8a3f7e44eb8f800243bc5837, type: 3}
-      propertyPath: 'dialogues.Array.data[3]'
-      value: "\u0110\u1EEBng \u0111\u1EC3 c\xE1i t\u0129nh l\u1EB7ng c\u1EE7a R\u1EEBng
-        Than Kh\xF3c \u0111\xE1nh l\u1EEBa. \u1EDE Minh Gi\u1EDBi n\xE0y, m\u1ED7i
-        g\u1ED1c c\xE2y, m\u1ED7i phi\u1EBFn \u0111\xE1 \u0111\u1EC1u \u0111ang l\u1EAFng
-        nghe. Ch\xFAng ch\u1EDD \u0111\u1EE3i m\u1ED9t giai \u0111i\u1EC7u \u0111\u1EE7
-        s\u1EE9c lay \u0111\u1ED9ng \u0111\u1EC3 th\u1EE9c t\u1EC9nh, ho\u1EB7c \u0111\u1EC3
-        nu\u1ED1t ch\u1EEDng l\u1EA5y nh\u1EEFng k\u1EBB l\u1EA1c l\u1ED1i kh\xF4ng
-        c\xF2n \u0111\u01B0\u1EDDng v\u1EC1."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2975389717457285121, guid: 8f4ad28b8a3f7e44eb8f800243bc5837, type: 3}
-      propertyPath: 'dialogues.Array.data[4]'
-      value: "Ch\xE1u \u0111ang c\u1EA7m th\u1EE9 \u0111\xF3... M\u1ED9t m\xF3n b\u1EA3o
-        v\u1EADt \u0111\xE3 m\u1EA5t \u0111i linh h\u1ED3n. \u0110\xF3 l\xE0 Thanh
-        Minh K\xEDnh, nh\u01B0ng gi\u1EDD n\xF3 ch\u1EC9 c\xF2n l\xE0 m\u1ED9t c\xE1i
-        khung r\u1ED7ng tu\u1EBFch, gi\u1ED1ng nh\u01B0 tr\xED nh\u1EDB c\u1EE7a
-        ch\xE1u l\xFAc n\xE0y v\u1EADy"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2975389717457285121, guid: 8f4ad28b8a3f7e44eb8f800243bc5837, type: 3}
-      propertyPath: 'dialogues.Array.data[5]'
-      value: "K\xFD \u1EE9c \u1EDF Minh Gi\u1EDBi n\xE0y m\u1ECFng manh l\u1EAFm.
-        Khi n\u1ED7i \u0111au qu\xE1 l\u1EDBn, linh h\u1ED3n s\u1EBD t\u1EF1 \u0111\u1EADp
-        v\u1EE1 ch\xEDnh m\xECnh \u0111\u1EC3 qu\xEAn \u0111i. Nh\u1EEFng m\u1EA3nh
-        v\u1EE1 \u0111\xF3 kh\xF4ng bi\u1EBFn m\u1EA5t, ch\xFAng bi\u1EBFn th\xE0nh
-        nh\u1EEFng M\u1EA3nh G\u01B0\u01A1ng K\xFD \u1EE8c, v\u0103ng v\u1EB3ng kh\u1EAFp
-        n\u1EBBo \u0111\u01B0\u1EDDng c\u1EE7a c\xF5i \xE2m n\xE0y."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2975389717457285121, guid: 8f4ad28b8a3f7e44eb8f800243bc5837, type: 3}
-      propertyPath: 'dialogues.Array.data[6]'
-      value: "Nhi\u1EC7m v\u1EE5 c\u1EE7a ch\xE1u l\xE0 ph\u1EA3i thu th\u1EADp \u0111\u1EE7
-        c\xE1c M\u1EA3nh G\u01B0\u01A1ng \u0111\u1EC3 h\xE0n g\u1EAFn l\u1EA1i Thanh
-        Minh K\xEDnh. Ch\u1EC9 khi g\u01B0\u01A1ng l\xE0nh, b\u1EA3n nh\u1EA1c Thanh
-        Minh Kh\xFAc m\u1EDBi vang l\xEAn tr\u1ECDn v\u1EB9n.\n\nNh\u01B0ng h\xE3y
-        nh\u1EDB: nh\u1EEFng m\u1EA3nh v\u1EE1 quan tr\u1ECDng nh\u1EA5t \u0111ang
-        n\u1EB1m trong tay nh\u1EEFng th\u1EF1c th\u1EC3 \u0111\u1EA7y o\xE1n ni\u1EC7m.
-        Ch\xFAng d\xF9ng k\xFD \u1EE9c c\u1EE7a ch\xE1u \u0111\u1EC3 nu\xF4i d\u01B0\u1EE1ng
-        s\u1EE9c m\u1EA1nh c\u1EE7a ch\xEDnh m\xECnh. Ch\xE1u s\u1EBD ph\u1EA3i \u0111\xF2i
-        l\u1EA1i ch\xFAng b\u1EB1ng s\u1EE9c m\u1EA1nh ho\u1EB7c b\u1EB1ng s\u1EF1
-        gi\xE1c ng\u1ED9."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2975389717457285121, guid: 8f4ad28b8a3f7e44eb8f800243bc5837, type: 3}
-      propertyPath: 'dialogues.Array.data[7]'
-      value: "H\xE3y \u0111i \u0111i! M\u1ED7i m\u1EA3nh g\u01B0\u01A1ng s\u1EBD
-        cho ch\xE1u m\u1ED9t ph\u1EA7n s\u1EE9c m\u1EA1nh m\u1EDBi, nh\u01B0ng c\u0169ng
-        s\u1EBD mang \u0111\u1EBFn nh\u1EEFng s\u1EF1 th\u1EADt cay \u0111\u1EAFng.
-        Li\u1EC7u ch\xE1u c\xF3 \u0111\u1EE7 can \u0111\u1EA3m \u0111\u1EC3 nh\xECn
-        th\u1EA5y h\xECnh \u1EA3nh th\u1EADt s\u1EF1 c\u1EE7a m\xECnh hi\u1EC7n ra
-        trong g\u01B0\u01A1ng khi n\xF3 ho\xE0n thi\u1EC7n kh\xF4ng?"
-      objectReference: {fileID: 0}
     - target: {fileID: 5683895424152392564, guid: 8f4ad28b8a3f7e44eb8f800243bc5837, type: 3}
       propertyPath: m_Name
       value: NPC
